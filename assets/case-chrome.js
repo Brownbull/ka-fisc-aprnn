@@ -432,4 +432,65 @@
       });
     });
   });
+
+  /* ── BLOQUE 4 · panel de ajustes en español ────────────────────────────
+     El shell A3 vendorizado construye su panel de lectura en inglés y no se
+     edita (ver tools/center/shell/PROCEDENCIA.md: una copia vendorizada nunca
+     se edita antes de un handoff). Esta capa lo traduce en el DOM después de
+     que el shell lo arma: el entregable lo leen vecinos del APR, y un panel
+     en inglés sobre un sitio en español rompe la lectura.
+     Río arriba correspondería i18n en el shell; mientras tanto, esto. */
+  (function () {
+    var TXT = {
+      "View settings": "Ajustes de lectura",
+      "Content font": "Tipo de letra",
+      "Text size": "Tamaño del texto",
+      "Density": "Densidad",
+      "Compact navigation": "Menú compacto",
+      "Theme": "Tema",
+      "Light": "Claro",
+      "Dark": "Oscuro"
+    };
+    var FUENTES = {
+      "Menlo (mono, default)": "Menlo (monoespaciada)",
+      "Cascadia (mono)": "Cascadia (monoespaciada)",
+      "Courier (mono)": "Courier (monoespaciada)",
+      "Segoe / Roboto": "Segoe / Roboto (por defecto)",
+      "Candara (humanist)": "Candara (humanista)",
+      "Cambria (serif)": "Cambria (con serifa)",
+      "Baskerville (serif)": "Baskerville (con serifa)",
+      "Charter (serif)": "Charter (con serifa)"
+    };
+
+    function traducir() {
+      var panel = document.querySelector(".a3panel");
+      if (!panel || panel.dataset.es === "1") return !!panel;
+      panel.querySelectorAll("h4, label.row, .a3toggle span, .a3seg button").forEach(function (el) {
+        var t = el.textContent.trim();
+        if (TXT[t]) el.textContent = TXT[t];
+      });
+      panel.querySelectorAll("#a3font option").forEach(function (op) {
+        var t = op.textContent.trim();
+        if (FUENTES[t]) op.textContent = FUENTES[t];
+      });
+      var gear = document.querySelector(".a3gear");
+      if (gear) {
+        gear.setAttribute("aria-label", TXT["View settings"]);
+        gear.title = TXT["View settings"];
+      }
+      panel.dataset.es = "1";
+      return true;
+    }
+
+    /* El panel del shell se arma en DOMContentLoaded; este script es `defer` y
+       puede correr antes o después. Se intenta ya, y si aún no existe se
+       observa el body hasta que aparezca (una sola vez). */
+    if (!traducir()) {
+      var obs = new MutationObserver(function () {
+        if (traducir()) obs.disconnect();
+      });
+      obs.observe(document.body, { childList: true });
+      document.addEventListener("DOMContentLoaded", traducir);
+    }
+  })();
 })();

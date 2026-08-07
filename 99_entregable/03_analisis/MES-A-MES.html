@@ -29,6 +29,7 @@
 <script src="../../assets/a3-settings.js" defer></script>
 <script src="../../assets/a3-lightbox.js" defer></script>
 <script src="../../assets/prism-fx.js" defer></script>
+<script>(function(){try{if(!localStorage.getItem("a3:font"))localStorage.setItem("a3:font","'Segoe UI',Roboto,'Noto Sans',sans-serif");if(!localStorage.getItem("a3:size"))localStorage.setItem("a3:size","16px");}catch(e){}})();</script>
 <link rel="stylesheet" href="../../assets/case-chrome.css">
 </head>
 <body>
@@ -101,7 +102,7 @@
     <div class="crumb"><a href="../../index.html">Inicio</a> › Analisis › <b>Mes a mes: los números de cada mes</b></div>
     <div class="spacer"></div>
     <div class="case-actions"><span class="case-badge">CONFIDENCIAL</span><button class="case-btn no-print" onclick="window.print()" title="Exportar a PDF">PDF</button><button class="case-btn is-primary no-print" id="pii-load-btn" title="Cargar pii-manifest.json desde tu equipo">Revelar datos</button><span class="pii-status no-print" id="pii-status"></span></div>
-    <span class="stamp">regen · 2026-08-07 16:56</span>
+    <span class="stamp">regen · 2026-08-07 17:11</span>
   </div>
   <div class="subject">
     <div class="subjecthead">
@@ -144,6 +145,24 @@ Solo abril está verificado contra el banco.</p>
 .anx-detrow .p{text-align:right;font-variant-numeric:tabular-nums;opacity:.7;white-space:nowrap}
 .anx-detrow .b{display:block;height:12px;border-radius:3px;min-width:2px}
 .anx-detrow .v{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.anx-stage{display:grid;margin-top:2px}
+.anx-stage>div{grid-area:1/1;min-width:0}
+.anx-h3{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.anx-seg{display:inline-flex;border:1px solid #4f46e5;border-radius:999px;overflow:hidden}
+.anx-seg button{font:inherit;font-size:.8em;cursor:pointer;border:0;background:transparent;color:var(--ink);padding:4px 14px}
+.anx-seg button.on{background:#4f46e5;color:#fff;font-weight:600}
+.anx-barras{display:flex;flex-direction:column;gap:3px;padding:6px 2px}
+.anx-bfila,.anx-btot{display:grid;grid-template-columns:minmax(110px,1.25fr) 3fr 6.6em 3.1em;gap:9px;align-items:center;font-size:.86em;border-radius:6px;padding:3px 5px}
+.anx-bfila{cursor:pointer}
+.anx-bfila:hover{background:var(--bg)}
+.anx-bfila.on{outline:2px solid #4f46e5}
+.anx-barras .n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.anx-barras .b{display:block;height:13px;background:var(--bg);border-radius:3px;overflow:hidden}
+.anx-barras .b i{display:block;height:100%;border-radius:3px}
+.anx-barras .v{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.anx-barras .p{text-align:right;font-variant-numeric:tabular-nums;opacity:.7;white-space:nowrap}
+.anx-btot{border-top:1px solid var(--line);margin-top:3px;padding-top:6px;font-weight:700}
+.anx-btot .p{font-weight:400;opacity:.6}
 svg [data-pick]{cursor:pointer}
 </style>
 
@@ -235,6 +254,57 @@ function detalle(lado,item){
     filas[i].classList.toggle("on",filas[i].getAttribute("data-pick")===item&&filas[i].getAttribute("data-lado")===lado);
   }
 }
+
+/* Barras horizontales: los mismos datos de la torta, leídos de otra forma.
+   Comparar tamaños es más directo en barras alineadas que en ángulos; la torta
+   muestra mejor la proporción sobre el total. Cada mirada sirve a una pregunta
+   distinta, así que el lector elige. Mismos data-pick → el detalle al tocar
+   funciona igual en ambas vistas. */
+function barras(pares,MAPA,centro,lado,NOM){
+  function disp(n){return (NOM&&NOM[n])?NOM[n]:n;}
+  var slices=[],otros=0;
+  pares.forEach(function(p){ if(MAPA[p[0]]){slices.push([p[0],p[1],MAPA[p[0]]]);} else {otros+=p[1];} });
+  if(otros>0){slices.push(["Otros",otros,GRIS]);}
+  var total=slices.reduce(function(a,s){return a+s[1];},0);
+  var max=slices.reduce(function(a,s){return Math.max(a,s[1]);},0);
+  var filas=slices.map(function(s){
+    var pct=Math.round(s[1]/total*100);
+    return '<div class="anx-bfila" data-pick="'+esc(s[0])+'" data-lado="'+lado+'" role="button" tabindex="0" title="'+esc(disp(s[0]))+': '+plata(s[1])+' ('+pct+'%) — toca para el detalle">'
+      +'<span class="n">'+esc(disp(s[0]))+'</span>'
+      +'<span class="b"><i style="width:'+(s[1]/max*100).toFixed(1)+'%;background:'+s[2]+'"></i></span>'
+      +'<span class="v">'+plata(s[1])+'</span><span class="p">'+pct+'%</span></div>';
+  }).join("");
+  return '<div class="anx-barras">'+filas
+    +'<div class="anx-btot"><span class="n">Total</span><span class="b"></span><span class="v">'+plata(total)+'</span><span class="p">'+esc(centro)+'</span></div></div>';
+}
+
+/* Sección con las dos vistas apiladas en la misma celda de grid: cambiar de
+   vista no mueve nada de lugar (el alto lo fija la vista más alta). */
+function grafico(pares,MAPA,centro,lado,NOM){
+  if(!pares.length){ return torta(pares,MAPA,centro,lado,NOM); }
+  return '<div class="anx-h3" style="margin:2px 0 8px"><div class="anx-seg" id="anx-vw-'+lado+'" data-t="anx-t-'+lado+'" data-b="anx-b-'+lado+'" role="group" aria-label="Forma del gráfico">'
+    +'<button type="button" data-v="torta" class="on">Torta</button><button type="button" data-v="barras">Barras</button></div></div>'
+    +'<div class="anx-stage">'
+    +'<div id="anx-t-'+lado+'">'+torta(pares,MAPA,centro,lado,NOM)+'</div>'
+    +'<div id="anx-b-'+lado+'" style="visibility:hidden">'+barras(pares,MAPA,centro,lado,NOM)+'</div>'
+    +'</div>';
+}
+function wireVista(lado){
+  var seg=document.getElementById("anx-vw-"+lado);
+  if(!seg)return;
+  var t=document.getElementById(seg.getAttribute("data-t"));
+  var b=document.getElementById(seg.getAttribute("data-b"));
+  seg.addEventListener("click",function(e){
+    var btn=e.target.closest("[data-v]");
+    if(!btn)return;
+    var esBarras=(btn.getAttribute("data-v")==="barras");
+    b.style.visibility=esBarras?"":"hidden";
+    t.style.visibility=esBarras?"hidden":"";
+    var bs=seg.querySelectorAll("[data-v]");
+    for(var i=0;i<bs.length;i++){bs[i].classList.toggle("on",bs[i]===btn);}
+  });
+}
+
 var MANUAL="../05_operacion/01_manual-documentos-apr.html";
 var SNAP_PG='<a href="../07_sistema-snap/SISTEMA-SNAP.html#el-contraste">contraste SNAP</a>';
 var M3={"Sep-25":"2.307","Oct-25":"2.716","Nov-25":"3.308","Dic-25":"4.030","Ene-26":"4.936","Feb-26":"6.006","Mar-26":"3.502","Abr-26":"3.341","May-26":"3.744","Jun-26":"3.473","Jul-26":"3.151"};
@@ -334,11 +404,11 @@ function render(id){
   h+=checklist(id,d);
   h+='<h4 style="margin:18px 0 6px">2 · En qué se fue la plata</h4>';
   h+='<div class="fchips">Fuente: <span class="fchip" data-f="libro" title="Libro de Caja de Registro Oficial de la directiva [REGISTRO]">Libro de Caja</span></div>';
-  h+=torta(d.grupo,RUBRO,"salió","g",null);
+  h+=grafico(d.grupo,RUBRO,"salió","g",null);
   h+='<div class="anx-det" id="anx-det-g"><span class="anx-nota">Toca una rebanada o una fila de la leyenda y aquí aparece el detalle del gasto. ¿Por dónde partir? Mira '+LINK_HALL+'.</span></div>';
   h+='<h4 style="margin:18px 0 6px">3 · Por dónde entró la plata</h4>';
   h+='<div class="fchips">Fuente: <span class="fchip" data-f="libro" title="Libro de Caja de Registro Oficial de la directiva [REGISTRO]">Libro de Caja</span> <span class="fchip" data-f="snap" title="Contrastado contra el exporte oficial del sistema de cobros SNAP, 07-08-2026 [SCAN]">contraste SNAP</span></div>';
-  h+=torta(d.canal,CANAL,"entró","c",null);
+  h+=grafico(d.canal,CANAL,"entró","c",null);
   h+=snapNota(id);
   h+='<div class="anx-det" id="anx-det-c"><span class="anx-nota">Toca un canal y aquí aparece el detalle de su recaudación.</span></div>';
   h+='<h4 style="margin:18px 0 6px">4 · Qué queda por cuadrar este mes</h4>';
@@ -351,12 +421,13 @@ function render(id){
     if(l&&l.length){paresV.push([e2,l.reduce(function(a,t){return a+t[2];},0)]);}
   });
   if(paresV.length){
-    h+=torta(paresV,ESTC,"por cuadrar","v",AMIG);
+    h+=grafico(paresV,ESTC,"por cuadrar","v",AMIG);
     h+='<div class="anx-det" id="anx-det-v"><span class="anx-nota">Toca un estado y aquí aparecen sus movimientos con la observación de la auditoría. El plan para cerrar cada pendiente: '+LINK_ACC+'.</span></div>';
   }else{
     h+=guiaVacio("Este mes no tiene movimientos que cuadrar en el Libro",["Es un mes sin registro — primero hay que reconstruirlo","Pedir la cartola al tesorero y anotar el mes completo","Después la comisión podrá verificarlo"],LINK_HALL+" (ficha C1) · "+LINK_ACC);
   }
   document.getElementById("anx-vista").innerHTML=h;
+  ["g","c","v"].forEach(wireVista);
   var botones=document.querySelectorAll(".anx-mes");
   for(var i=0;i<botones.length;i++){botones[i].setAttribute("aria-pressed",String(botones[i].getAttribute("data-mes")===id));}
 }
