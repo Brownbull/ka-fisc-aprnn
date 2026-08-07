@@ -343,3 +343,25 @@
 .fchip[data-f="cartola"]  { --fc: #4a3aa7; }  /* cartola del banco [VERIFICADO] */
 .fchip[data-f="pantalla"] { --fc: #8a94a6; }  /* pantallazo del panel [SCAN] */
 .fchip[data-f="testimonio"]{ --fc: #fab219; } /* dicho por alguien [TESTIMONIO] */
+
+/* El sello de regeneración (.stamp) del topbar es metadato de build, no
+   contenido: en 375px empuja la barra 26px más allá del viewport y produce
+   scroll horizontal en TODA la página. Bajo 560px se oculta — el dato sigue
+   disponible en el pie de cada documento. */
+@media (max-width: 560px) {
+  .topbar .stamp { display: none; }
+}
+
+/* Riel en teléfono: el shell apila riel sobre contenido, y con 19 documentos
+   el menú empuja el texto ~1.000px hacia abajo — quien abre el sitio en el
+   teléfono ve una lista de links, no el documento. Acotar la altura y darle
+   scroll propio deja el menú completo disponible y el contenido a la vista
+   desde el primer pantallazo. CSS puro: no depende de JS ni toca el shell. */
+@media (max-width: 700px) {
+  .side {
+    max-height: 42vh;
+    overflow-y: auto;
+    border-bottom: 1px solid var(--line);
+    -webkit-overflow-scrolling: touch;
+  }
+}
