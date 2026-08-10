@@ -52,48 +52,55 @@
   </span>
   <span><b>Apr Nancul Norte</b><small>El Fiscalizador · 202603</small></span>
   </div>
-  <button type="button" class="navlabel g-now navtoggle" data-group="entregable" aria-expanded="true">Entregable<span class="navchevron" aria-hidden="true"></span></button>
-  <div class="navgroup" data-group="entregable">
-  <a class="navitem" href="../../99_entregable/INICIO.html" title="Cuentas claras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Cuentas claras</span> <span class="count">4</span></a>
-  </div>
-  <button type="button" class="navlabel g-ent navtoggle" data-group="hallazgos" aria-expanded="true">Hallazgos<span class="navchevron" aria-hidden="true"></span></button>
-  <div class="navgroup" data-group="hallazgos">
-  <a class="navitem" href="../../99_entregable/01_hallazgos/HALLAZGOS.html" title="Hallazgos de la auditoría de abril 2026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> <span class="navtext">Hallazgos de la audi</span> <span class="count">3</span></a>
-  </div>
-  <button type="button" class="navlabel g-code navtoggle" data-group="pendientes" aria-expanded="true">Pendientes<span class="navchevron" aria-hidden="true"></span></button>
-  <div class="navgroup" data-group="pendientes">
-  <a class="navitem" aria-current="page" href="../../99_entregable/02_pendientes/PENDIENTES.html" title="Pendientes: el tablero completo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Pendientes</span> <span class="count">4</span></a>
-  </div>
-  <button type="button" class="navlabel g-test navtoggle" data-group="analisis" aria-expanded="true">Analisis<span class="navchevron" aria-hidden="true"></span></button>
+  <div class="perfilbar"><label class="perfillabel" for="perfil-sel"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Soy…</label><select id="perfil-sel" class="perfilsel" aria-label="Ver el sitio según tu rol"><option value="">Ver todo el sitio</option><option value="socio">Socio</option><option value="presidente">Presidente</option><option value="tesorero">Tesorero/a</option><option value="secretario">Secretario/a</option><option value="administrativa">Administrativa</option><option value="operador">Operador</option><option value="comision">Comisión</option></select></div>
+  <button type="button" class="navlabel g-now navtoggle" data-group="analisis" aria-expanded="true">Analisis<span class="navchevron" aria-hidden="true"></span></button>
   <div class="navgroup" data-group="analisis">
-  <a class="navitem" href="../../99_entregable/03_analisis/MES-A-MES.html" title="Mes a mes: los números de cada mes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Mes a mes</span> <span class="count">1</span></a>
-  <a class="navitem" href="../../99_entregable/03_analisis/TOTALES-DEL-ANO.html" title="El año completo: agregados y tendencias"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">El año completo</span> <span class="count">9</span></a>
+  <a class="navitem" data-perfiles="comision presidente socio tesorero" href="../../99_entregable/03_analisis/MES-A-MES.html" title="Mes a mes: los números de cada mes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Mes a mes</span> <span class="count">1</span></a>
+  <a class="navitem" data-perfiles="comision presidente socio tesorero" href="../../99_entregable/03_analisis/TOTALES-DEL-ANO.html" title="El año completo: agregados y tendencias"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">El año completo</span> <span class="count">9</span></a>
+  <a class="navitem" data-perfiles="comision presidente socio tesorero" href="../../99_entregable/03_analisis/PROYECCIONES.html" title="Proyecciones y decisiones que vienen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg> <span class="navtext">Proyecciones y decis</span> <span class="count">9</span></a>
+  </div>
+  <button type="button" class="navlabel g-ent navtoggle" data-group="entregable" aria-expanded="true">Entregable<span class="navchevron" aria-hidden="true"></span></button>
+  <div class="navgroup" data-group="entregable">
+  <a class="navitem" data-perfiles="administrativa comision operador presidente secretario socio tesorero" href="../../99_entregable/INICIO.html" title="Cuentas claras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Cuentas claras</span> <span class="count">4</span></a>
+  </div>
+  <button type="button" class="navlabel g-code navtoggle" data-group="hallazgos" aria-expanded="true">Hallazgos<span class="navchevron" aria-hidden="true"></span></button>
+  <div class="navgroup" data-group="hallazgos">
+  <a class="navitem" data-perfiles="comision presidente tesorero" href="../../99_entregable/01_hallazgos/HALLAZGOS.html" title="Hallazgos de la auditoría de abril 2026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> <span class="navtext">Hallazgos de la audi</span> <span class="count">3</span></a>
+  </div>
+  <button type="button" class="navlabel g-test navtoggle" data-group="pendientes" aria-expanded="true">Pendientes<span class="navchevron" aria-hidden="true"></span></button>
+  <div class="navgroup" data-group="pendientes">
+  <a class="navitem" aria-current="page" data-perfiles="administrativa comision presidente secretario socio tesorero" href="../../99_entregable/02_pendientes/PENDIENTES.html" title="Pendientes: el tablero completo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Pendientes</span> <span class="count">4</span></a>
   </div>
   <button type="button" class="navlabel g-docs navtoggle" data-group="datos" aria-expanded="true">Datos<span class="navchevron" aria-hidden="true"></span></button>
   <div class="navgroup" data-group="datos">
-  <a class="navitem" href="../../99_entregable/04_datos/MAPA-DE-DATOS.html" title="Dónde viven los datos del comité"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Dónde viven los dato</span> <span class="count">3</span></a>
+  <a class="navitem" data-perfiles="administrativa comision tesorero" href="../../99_entregable/04_datos/MAPA-DE-DATOS.html" title="Dónde viven los datos del comité"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Dónde viven los dato</span> <span class="count">3</span></a>
   </div>
   <button type="button" class="navlabel g-board navtoggle" data-group="operacion" aria-expanded="true">Operación<span class="navchevron" aria-hidden="true"></span></button>
   <div class="navgroup" data-group="operacion">
-  <a class="navitem" href="../../99_entregable/05_operacion/01_manual-documentos-apr.html" title="Manual de Documentos — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Manual de Documentos</span> <span class="count">9</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/02_operaciones-periodicas.html" title="Operaciones Periódicas — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg> <span class="navtext">Operaciones Periódic</span> <span class="count">8</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/04_politica-gastos-autorizacion.html" title="Política de Gastos y Autorización — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> <span class="navtext">Política de Gastos y</span> <span class="count">7</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/05_matriz-responsabilidades.html" title="Matriz de Responsabilidades — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Matriz de Responsabi</span> <span class="count">8</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/06_guia-rendicion-anual.html" title="Guía de Rendición Anual — Para el Tesorero/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía de Rendición An</span> <span class="count">7</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/administrativa.html" title="Guía Administrativa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Administrativa</span> <span class="count">4</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/comision-revisora.html" title="Guía Comisión Revisora de Cuentas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Comisión Reviso</span> <span class="count">6</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/operadores.html" title="Guía Operadores de Planta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Operadores de P</span> <span class="count">6</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/presidente.html" title="Guía Presidente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Presidente</span> <span class="count">7</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/secretaria.html" title="Guía Secretario/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Secretario/a</span> <span class="count">5</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/tesorero.html" title="Guía Tesorero/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Tesorero/a</span> <span class="count">5</span></a>
+  <a class="navitem" data-perfiles="administrativa operador presidente secretario tesorero" href="../../99_entregable/05_operacion/01_manual-documentos-apr.html" title="Manual de Documentos — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Manual de Documentos</span> <span class="count">9</span></a>
+  <a class="navitem" data-perfiles="administrativa operador tesorero" href="../../99_entregable/05_operacion/02_operaciones-periodicas.html" title="Operaciones Periódicas — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg> <span class="navtext">Operaciones Periódic</span> <span class="count">8</span></a>
+  <a class="navitem" data-perfiles="presidente tesorero" href="../../99_entregable/05_operacion/04_politica-gastos-autorizacion.html" title="Política de Gastos y Autorización — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> <span class="navtext">Política de Gastos y</span> <span class="count">7</span></a>
+  <a class="navitem" data-perfiles="presidente secretario" href="../../99_entregable/05_operacion/05_matriz-responsabilidades.html" title="Matriz de Responsabilidades — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Matriz de Responsabi</span> <span class="count">8</span></a>
+  <a class="navitem" data-perfiles="comision tesorero" href="../../99_entregable/05_operacion/06_guia-rendicion-anual.html" title="Guía de Rendición Anual — Para el Tesorero/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía de Rendición An</span> <span class="count">7</span></a>
+  <a class="navitem" data-perfiles="administrativa comision presidente tesorero" href="../../99_entregable/05_operacion/07_como-comprar-y-rendir.html" title="Cómo comprar y cómo rendir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Cómo comprar y cómo</span> <span class="count">5</span></a>
+  <a class="navitem" data-perfiles="administrativa" href="../../99_entregable/05_operacion/roles/administrativa.html" title="Guía Administrativa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Administrativa</span> <span class="count">4</span></a>
+  <a class="navitem" data-perfiles="comision" href="../../99_entregable/05_operacion/roles/comision-revisora.html" title="Guía Comisión Fiscalizadora de Finanzas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Comisión Fiscal</span> <span class="count">6</span></a>
+  <a class="navitem" data-perfiles="operador" href="../../99_entregable/05_operacion/roles/operadores.html" title="Guía Operadores de Planta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Operadores de P</span> <span class="count">6</span></a>
+  <a class="navitem" data-perfiles="presidente" href="../../99_entregable/05_operacion/roles/presidente.html" title="Guía Presidente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Presidente</span> <span class="count">7</span></a>
+  <a class="navitem" data-perfiles="secretario" href="../../99_entregable/05_operacion/roles/secretaria.html" title="Guía Secretario/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Secretario/a</span> <span class="count">5</span></a>
+  <a class="navitem" data-perfiles="tesorero" href="../../99_entregable/05_operacion/roles/tesorero.html" title="Guía Tesorero/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Tesorero/a</span> <span class="count">5</span></a>
   </div>
   <button type="button" class="navlabel g-ledger navtoggle" data-group="extra" aria-expanded="true">Extra<span class="navchevron" aria-hidden="true"></span></button>
   <div class="navgroup" data-group="extra">
-  <a class="navitem" href="../../99_entregable/06_extra/INFO-ADICIONAL.html" title="Información adicional"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Información adiciona</span> <span class="count">8</span></a>
+  <a class="navitem" data-perfiles="socio" href="../../99_entregable/06_extra/INFO-ADICIONAL.html" title="Información adicional"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Información adiciona</span> <span class="count">8</span></a>
   </div>
   <button type="button" class="navlabel g-rel navtoggle" data-group="sistema-snap" aria-expanded="true">Sistema Snap<span class="navchevron" aria-hidden="true"></span></button>
   <div class="navgroup" data-group="sistema-snap">
-  <a class="navitem" href="../../99_entregable/07_sistema-snap/SISTEMA-SNAP.html" title="El sistema SNAP — qué descargamos y qué dice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">El sistema SNAP</span> <span class="count">5</span></a>
+  <a class="navitem" data-perfiles="administrativa comision tesorero" href="../../99_entregable/07_sistema-snap/SISTEMA-SNAP.html" title="El sistema SNAP — qué descargamos y qué dice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">El sistema SNAP</span> <span class="count">5</span></a>
+  </div>
+  <button type="button" class="navlabel g-leaf navtoggle" data-group="informes" aria-expanded="true">Informes<span class="navchevron" aria-hidden="true"></span></button>
+  <div class="navgroup" data-group="informes">
+  <a class="navitem" data-perfiles="comision presidente socio tesorero" href="../../99_entregable/08_informes/INFORME-01.html" title="Comisión · ago 2026 — Informe de fiscalización N° 1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Comisión · ago 2026</span> <span class="count">8</span></a>
   </div>
 </aside>
 
@@ -102,7 +109,7 @@
     <div class="crumb"><a href="../../index.html">Inicio</a> › Pendientes › <b>Pendientes: el tablero completo</b></div>
     <div class="spacer"></div>
     <div class="case-actions"><span class="case-badge">CONFIDENCIAL</span><button class="case-btn no-print" onclick="window.print()" title="Exportar a PDF">PDF</button><button class="case-btn is-primary no-print" id="pii-load-btn" title="Cargar pii-manifest.json desde tu equipo">Revelar datos</button><span class="pii-status no-print" id="pii-status"></span></div>
-    <span class="stamp">regen · 2026-08-07 17:11</span>
+    <span class="stamp">regen · 2026-08-10 17:25</span>
   </div>
   <div class="subject">
     <div class="subjecthead">
@@ -116,19 +123,19 @@
       <section class="tabpane" id="doc" style="display:block">
         <article class="docbody">
           <div class="disclaimer-bar no-print">Documento orientativo, no vinculante. Elaborado con apoyo de IA. Consulte a un profesional habilitado.</div><div class="priority-filter no-print" id="priority-filter" style="display:none;"><span class="filter-label">Filtrar:</span><button class="filter-btn active" data-priority="all">Todos</button><button class="filter-btn" data-priority="critico">Crítico</button><button class="filter-btn" data-priority="importante">Importante</button><button class="filter-btn" data-priority="deseable">Deseable</button></div><blockquote>
-<p>Guía orientativa de la comisión revisora, elaborada con apoyo de IA. No constituye auditoría
+<p>Guía orientativa de la Comisión Fiscalizadora de Finanzas, elaborada con apoyo de IA. No constituye auditoría
 certificada. 🛠 <strong>Para el comité</strong> (presidente, tesorería, administrativa) — responde: <em>¿qué hay
 que hacer, quién, y qué mejora al resolverlo?</em> Los socios también pueden mirar.
 <strong>Un solo lugar para todo lo pendiente</strong>: qué falta, qué lo gatilla, cómo se
 resuelve, quién lo hace y qué mejora cuando se resuelve. La evidencia de cada hallazgo
 numerado (C/I/M) vive en <a href="../01_hallazgos/HALLAZGOS.html">Hallazgos</a>, el registro de la auditoría.</p>
 </blockquote>
-<p><strong>Cómo leer este tablero</strong>: el orden ES la prioridad — primero lo de arriba. Los colores aquí
-significan urgencia: 🔴 ahora · 🟠 siguiente en la fila · ⚪ cuando se pueda. Un pendiente sin
-nombre en la columna "Quién" está huérfano — si ves uno, avísanos.</p>
-<p><strong>Cada pendiente tiene su código (P1–P20)</strong>. Para avisar un avance basta el código: <em>"P4 listo"</em>
-o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve a
-<a href="#terminados">Terminados</a> con su fecha, y el <a href="../INICIO.html">semáforo</a> se actualiza.</p>
+<p class="nota"><b>Cómo leer este tablero</b>: el orden ES la prioridad — primero lo de arriba. Los colores aquí significan urgencia: 🔴 ahora · 🟠 siguiente en la fila · ⚪ cuando se pueda. Un pendiente sin nombre en la columna "Quién" está huérfano — si ves uno, avísanos.</p>
+
+<p class="nota"><b>Cada pendiente tiene su código (P1–P25)</b>. Para avisar un avance basta el código: <i>"P4 listo"</i> o <i>"la P2 quedó a medias"</i>. Con eso la comisión marca la fila, la mueve a <a href="#terminados">Terminados</a> con su fecha, y el <a href="../INICIO.html">semáforo</a> se actualiza.</p>
+
+<p class="nota">📋 <b>¿Necesitas el paso a paso?</b> Nueve de estos pendientes —P2, P3, P5, P11, P12, P16, P20, P22 y P25— llevan su <b>procedimiento completo</b> en el informe <a href="../08_informes/INFORME-01.html">Comisión · ago 2026</a>: dónde está lo que se necesita, quién lo hace y qué se hace si el documento no existe. Esta tabla dice <i>qué</i> hay que hacer; el informe dice <i>cómo</i>.</p>
+
 <h2 id="ahora-5"><span class="num">01</span>🔴 Ahora (5)</h2>
 <div class="table-wrapper"><table>
 <thead>
@@ -138,6 +145,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <th>Cómo se resuelve</th>
 <th>Quién</th>
 <th>Qué se actualiza al resolverlo</th>
+<th>Fuente</th>
 </tr>
 </thead>
 <tbody>
@@ -147,6 +155,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>La administrativa coordina el muestreo con el laboratorio y sube el resultado apenas llegue</td>
 <td><strong>Administrativa</strong> (lo encarga la directiva)</td>
 <td>Carpeta técnica vigente; se apaga la única alerta de salud del sitio</td>
+<td><span class="fchip" data-f="testimonio" title="Dicho por la directiva o el tesorero [TESTIMONIO]">Testimonio</span> <span class="fchip" data-f="ley" title="Ley 20.998, DS 50/2019, Ley 19.418 [VERIFICADO-NORMATIVA]">Ley</span></td>
 </tr>
 <tr>
 <td><span id="p-cartolas"></span><strong>P2 · Cartolas de 10 meses</strong> (sep-25 a jul-26)</td>
@@ -154,6 +163,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Descargarlas del portal del banco (ambas cuentas) y subirlas a la carpeta <code>ingresos/</code> de cada mes</td>
 <td><strong>Tesorero/a</strong></td>
 <td>Cada mes con cartola puede verificarse → el semáforo avanza hacia verde</td>
+<td><span class="fchip" data-f="cartola" title="Cartola Santander [VERIFICADO]">Cartola</span> <span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span></td>
 </tr>
 <tr>
 <td><span id="p-enemar"></span><strong>P3 · Gastos de ene–mar 2026 en el Libro</strong> · <a href="../01_hallazgos/HALLAZGOS.html#c1">C1</a></td>
@@ -161,6 +171,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Con la cartola de cada mes en mano, anotar movimiento por movimiento con su factura al lado</td>
 <td><strong>Tesorero/a + Administrativa</strong></td>
 <td>3 meses rojos pasan a registrados; el cierre anual vuelve a ser cuadrable</td>
+<td><span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span> <span class="fchip" data-f="cartola" title="Cartola Santander [VERIFICADO]">Cartola</span> <span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span></td>
 </tr>
 <tr>
 <td><span id="p-junio"></span><strong>P4 · Ingresos de junio en el Libro</strong></td>
@@ -168,17 +179,19 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Anotar la recaudación de junio por canal — <strong>ya está lista en SNAP: $7.354.313 en 426 pagos</strong>, ver <a href="../07_sistema-snap/SISTEMA-SNAP.html#el-contraste">el contraste</a>; julio quedará igual de listo al cerrar el mes (SNAP ya registra $1.628.120)</td>
 <td><strong>Tesorero/a</strong></td>
 <td>Junio deja de estar rojo en el semáforo</td>
+<td><span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span> <span class="fchip" data-f="snap" title="Exporte SNAP 07-08-2026 [SCAN]">SNAP</span></td>
 </tr>
 <tr>
 <td><span id="p-cajachica"></span><strong>P5 · Rendición de la caja chica ($600.000)</strong> · <a href="../01_hallazgos/HALLAZGOS.html#c3">C3</a></td>
-<td>El giro aparece en la cartola de abril; la carpeta de rendiciones está vacía hace +30 días</td>
-<td>La administrativa arma la rendición con sus boletas; el tesorero revisa y <strong>firma</strong>; PDF a la carpeta del mes</td>
+<td>El giro aparece en la cartola de abril; la carpeta de rendiciones está vacía hace +30 días. <strong>Además el Art. 38 del Estatuto topa la caja en 2 UTM ($143.298) y el giro fue $600.000</strong></td>
+<td>La administrativa arma la rendición con sus boletas; el tesorero revisa y <strong>firma</strong>; PDF a la carpeta del mes. Ajustar el fondo fijo al tope estatutario o gestionar la autorización expresa que el Art. 38 exige</td>
 <td><strong>Administrativa arma · Tesorero/a firma</strong></td>
 <td>El hallazgo C3 se cierra; el circuito de caja chica queda funcionando</td>
+<td><span class="fchip" data-f="cartola" title="Cartola Santander [VERIFICADO]">Cartola</span> <span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span></td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="siguiente-en-la-fila-10"><span class="num">02</span>🟠 Siguiente en la fila (10)</h2>
+<h2 id="siguiente-en-la-fila-13"><span class="num">02</span>🟠 Siguiente en la fila (13)</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -187,6 +200,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <th>Cómo se resuelve</th>
 <th>Quién</th>
 <th>Qué se actualiza al resolverlo</th>
+<th>Fuente</th>
 </tr>
 </thead>
 <tbody>
@@ -196,6 +210,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Agregar las 3 líneas con su glosa y adoptar la <strong>regla de oro</strong>: todo lo de la cartola va al Libro</td>
 <td><strong>Tesorero/a</strong></td>
 <td>Abril queda fiel al banco; la regla evita que se repita</td>
+<td><span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span> <span class="fchip" data-f="cartola" title="Cartola Santander [VERIFICADO]">Cartola</span></td>
 </tr>
 <tr>
 <td><span id="p-previred"></span><strong>P7 · Comprobante Previred archivado cada mes</strong> · <a href="../01_hallazgos/HALLAZGOS.html#c4">C4</a></td>
@@ -203,6 +218,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Descargarlo de previred.com tras cada pago y subirlo a <code>laboral/previred/</code> — 2 minutos al mes</td>
 <td><strong>Tesorero/a</strong></td>
 <td>La cobertura de cada trabajador queda demostrable, todos los meses</td>
+<td><span class="fchip" data-f="cartola" title="Cartola Santander [VERIFICADO]">Cartola</span> <span class="fchip" data-f="ley" title="Ley 20.998, DS 50/2019, Ley 19.418 [VERIFICADO-NORMATIVA]">Ley</span></td>
 </tr>
 <tr>
 <td><span id="p-concilia"></span><strong>P8 · Conciliación de ingresos giro a giro</strong> · <a href="../01_hallazgos/HALLAZGOS.html#i5">I5</a></td>
@@ -210,6 +226,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Tabla mensual simple: cada abono del banco junto a su registro, con las diferencias explicadas — la mitad del camino ya está: los ingresos del Libro <a href="../07_sistema-snap/SISTEMA-SNAP.html#el-contraste">calzan al peso con SNAP</a>; falta cruzarlos contra el banco</td>
 <td><strong>Tesorero/a</strong></td>
 <td>Las diferencias dejan de ser dudas — quedan explicadas por escrito cada mes</td>
+<td><span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span> <span class="fchip" data-f="cartola" title="Cartola Santander [VERIFICADO]">Cartola</span> <span class="fchip" data-f="snap" title="Exporte SNAP 07-08-2026 [SCAN]">SNAP</span></td>
 </tr>
 <tr>
 <td><span id="p-cheques"></span><strong>P9 · Registrar los 17 pagos con cheque ($559.470)</strong></td>
@@ -217,6 +234,23 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Agregar el canal "Cheque" al Libro y anotar los 17 pagos con fecha y monto — el detalle viene en el exporte de arqueo respaldado en <code>05_snap/</code></td>
 <td><strong>Tesorero/a</strong></td>
 <td>Diciembre, enero y marzo calzan al peso con el sistema de cobros</td>
+<td><span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span> <span class="fchip" data-f="snap" title="Exporte SNAP 07-08-2026 [SCAN]">SNAP</span></td>
+</tr>
+<tr>
+<td><span id="p-libros"></span><strong>P21 · Exhibición de los siete libros obligatorios</strong> · <a href="../01_hallazgos/HALLAZGOS.html#n14">N14</a></td>
+<td>El <strong>Reglamento Interno Art. 44</strong> exige siete registros (socios, actas, caja, medidores, reclamos, correspondencia, inventario). La auditoría revisó dos</td>
+<td>La administrativa exhibe los siete libros; la comisión fotografía portada y última hoja escrita de cada uno</td>
+<td><strong>Administrativa exhibe · Comisión verifica</strong></td>
+<td>Se sabe cuáles existen y cuáles hay que abrir</td>
+<td><span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span></td>
+</tr>
+<tr>
+<td><span id="p-inventario"></span><strong>P22 · Abrir el Libro de Inventario</strong> · <a href="../01_hallazgos/HALLAZGOS.html#n14">N14</a></td>
+<td>Sin inventario, la Comisión no puede cumplir su primera atribución (Art. 35 a: «comprobar la exactitud del Inventario»)</td>
+<td>Levantar el inventario: estanque, bombas, planta, herramientas, computador y las obras de los arranques nuevos de abril</td>
+<td><strong>Tesorero/a levanta · Directorio aprueba</strong></td>
+<td>La Comisión puede emitir su informe anual completo</td>
+<td><span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span></td>
 </tr>
 <tr>
 <td><span id="p-pactos"></span><strong>P10 · Renovar pactos de horas extra</strong> · <a href="../01_hallazgos/HALLAZGOS.html#i6">I6</a></td>
@@ -224,6 +258,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Firmar pactos nuevos con cada trabajador y archivar; anotar el próximo vencimiento en el calendario</td>
 <td><strong>Directiva</strong></td>
 <td>Carpeta laboral al día; sin riesgo de multa de la Dirección del Trabajo</td>
+<td><span class="fchip" data-f="ley" title="Ley 20.998, DS 50/2019, Ley 19.418 [VERIFICADO-NORMATIVA]">Ley</span> <span class="fchip" data-f="testimonio" title="Dicho por la directiva o el tesorero [TESTIMONIO]">Testimonio</span></td>
 </tr>
 <tr>
 <td><span id="p-actainv"></span><strong>P11 · Acta de las inversiones ($2.091.339)</strong> · <a href="../01_hallazgos/HALLAZGOS.html#i8">I8</a></td>
@@ -231,6 +266,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>La directiva formaliza el acuerdo (o ratificación) en acta firmada, a la carpeta legal</td>
 <td><strong>Directiva</strong></td>
 <td>La inversión queda respaldada; regla nueva: gasto grande = acta primero</td>
+<td><span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span> <span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span></td>
 </tr>
 <tr>
 <td><span id="p-saldo"></span><strong>P12 · Desglosar el saldo por cuenta</strong> · <a href="../01_hallazgos/HALLAZGOS.html#i9">I9</a></td>
@@ -238,6 +274,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Separar cada mes en 3 líneas: cta. corriente + cta. ahorro + efectivo en caja</td>
 <td><strong>Tesorero/a</strong></td>
 <td>El saldo se vuelve verificable contra las dos cartolas</td>
+<td><span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span> <span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span></td>
 </tr>
 <tr>
 <td><span id="p-laboral"></span><strong>P13 · Set laboral completo por trabajador</strong> · <a href="../01_hallazgos/HALLAZGOS.html#i11">I11</a></td>
@@ -245,6 +282,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Reunir contrato + anexos + liquidaciones de cada trabajador (un PDF por documento) y archivar</td>
 <td><strong>Administrativa reúne · Tesorero/a verifica</strong></td>
 <td>Carpeta laboral completa; cumplimiento laboral deja de estar en 4/20</td>
+<td><span class="fchip" data-f="ley" title="Ley 20.998, DS 50/2019, Ley 19.418 [VERIFICADO-NORMATIVA]">Ley</span> <span class="fchip" data-f="testimonio" title="Dicho por la directiva o el tesorero [TESTIMONIO]">Testimonio</span></td>
 </tr>
 <tr>
 <td><span id="p-actacentral"></span><strong>P14 · Acta de la centralización en el Libro único</strong></td>
@@ -252,17 +290,27 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Llevarla a la próxima reunión de directiva y dejarla en acta firmada</td>
 <td><strong>Directiva + Secretario/a</strong></td>
 <td>La regla del <a href="../05_operacion/01_manual-documentos-apr.html#el-libro-de-caja-consolidado">Libro único</a> queda verificable para cualquier revisor</td>
+<td><span class="fchip" data-f="testimonio" title="Dicho por la directiva o el tesorero [TESTIMONIO]">Testimonio</span> <span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span></td>
 </tr>
 <tr>
 <td><span id="p-preguntas"></span><strong>P15 · Responder las 4 preguntas abiertas</strong></td>
 <td>La auditoría de abril dejó 3 preguntas al tesorero y el contraste SNAP sumó una: <strong>1)</strong> los sueldos de los operadores bajaron entre marzo y abril (~$100.000 y ~$50.000 menos) — ¿diferencia por horas extra? · <strong>2)</strong> ¿cuál es el saldo y movimiento de la cuenta de ahorro? (recibió $600.000 en abril, sin cartola en el archivo) · <strong>3)</strong> ¿por qué el resumen del Libro usa el total de la cartola y no la suma de su propia hoja de ingresos? · <strong>4)</strong> el comprobante de <strong>$757.110 en efectivo anulado el 08-06</strong> en SNAP — ¿se re-emitió ese pago?</td>
 <td>Conversarlas con el tesorero y anotar las respuestas</td>
-<td><strong>Comisión revisora</strong></td>
+<td><strong>Comisión Fiscalizadora</strong></td>
 <td>Las respuestas quedan documentadas en el informe de auditoría</td>
+<td><span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span> <span class="fchip" data-f="cartola" title="Cartola Santander [VERIFICADO]">Cartola</span> <span class="fchip" data-f="snap" title="Exporte SNAP 07-08-2026 [SCAN]">SNAP</span></td>
+</tr>
+<tr>
+<td><span id="p-informe"></span><strong>P25 · Presentar el informe de la Comisión a la asamblea</strong> · <a href="../08_informes/INFORME-01.html">Comisión · ago 2026</a></td>
+<td>El <strong>Art. 35 c)</strong> obliga a la comisión a dar cuenta a la asamblea de lo que encuentre. El informe ya está escrito y sin firmar</td>
+<td>Los integrantes lo firman, se cita en tabla de la próxima asamblea y se lee; el acta consigna <strong>cada acuerdo por separado, con responsable y plazo</strong></td>
+<td><strong>Comisión Fiscalizadora presenta · Asamblea resuelve</strong></td>
+<td>Las 11 acciones del informe pasan de sugerencia a acuerdo con acta — y las 4 que requieren voto quedan resueltas</td>
+<td><span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span></td>
 </tr>
 </tbody>
 </table></div>
-<h2 id="cuando-se-pueda-5"><span class="num">03</span>⚪ Cuando se pueda (5)</h2>
+<h2 id="cuando-se-pueda-7"><span class="num">03</span>⚪ Cuando se pueda (7)</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -271,6 +319,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <th>Cómo se resuelve</th>
 <th>Quién</th>
 <th>Qué se actualiza al resolverlo</th>
+<th>Fuente</th>
 </tr>
 </thead>
 <tbody>
@@ -280,6 +329,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>La directiva elabora un presupuesto simple; la asamblea lo aprueba; se compara cada mes</td>
 <td><strong>Directiva + Asamblea</strong></td>
 <td>El déficit de un mes deja de ser sorpresa — se compara contra lo previsto</td>
+<td><span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span> <span class="fchip" data-f="ley" title="Ley 20.998, DS 50/2019, Ley 19.418 [VERIFICADO-NORMATIVA]">Ley</span></td>
 </tr>
 <tr>
 <td><span id="p-120"></span><strong>P17 · Corregir los $120 de la factura de nichos</strong> · <a href="../01_hallazgos/HALLAZGOS.html#m12">M12</a></td>
@@ -287,6 +337,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Actualizar la cifra en el Libro</td>
 <td><strong>Tesorero/a</strong></td>
 <td>La conciliación de abril queda exacta al peso</td>
+<td><span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span> <span class="fchip" data-f="cartola" title="Cartola Santander [VERIFICADO]">Cartola</span></td>
 </tr>
 <tr>
 <td><span id="p-fotos"></span><strong>P18 · Renombrar las fotos de cartola + re-subir el balance</strong> · <a href="../01_hallazgos/HALLAZGOS.html#m13">M13</a></td>
@@ -294,6 +345,7 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>Renombrar con formato <code>año-mes_cartola-pNN</code> y re-subir el balance desde el original</td>
 <td><strong>Administrativa</strong></td>
 <td>Cualquiera encuentra la página de cartola que busca</td>
+<td><span class="fchip" data-f="libro" title="Libro de Caja [REGISTRO]">Libro</span> <span class="fchip" data-f="testimonio" title="Dicho por la directiva o el tesorero [TESTIMONIO]">Testimonio</span></td>
 </tr>
 <tr>
 <td><span id="p-catalogo"></span><strong>P19 · Configurar el plan de cuentas en SNAP</strong></td>
@@ -301,13 +353,31 @@ o <em>"la P2 quedó a medias"</em>. Con eso la comisión marca la fila, la mueve
 <td>La administrativa lo pide al soporte de SNAP (Geoxite): activar el catálogo SSR y clasificar los productos</td>
 <td><strong>Administrativa</strong></td>
 <td>Los reportes contables del sistema pasan a servir para rendiciones y auditorías</td>
+<td><span class="fchip" data-f="snap" title="Exporte SNAP 07-08-2026 [SCAN]">SNAP</span></td>
 </tr>
 <tr>
-<td><span id="p-tercero"></span><strong>P20 · Tercer miembro de la comisión revisora</strong></td>
+<td><span id="p-desglose"></span><strong>P23 · Desglosar los $9,1 millones por cobrar</strong></td>
+<td>El Reglamento crea al menos seis cobros distintos (consumo, cargo fijo, multas por inasistencia, cuotas, reposición de servicio) que terminan en la misma boleta — hoy el total va sin separar</td>
+<td>Pedir a SNAP el desglose por concepto y publicarlo junto al total; separar las cuentas de ingreso en el Libro</td>
+<td><strong>Administrativa</strong></td>
+<td>Se sabe cuánto es agua y cuánto es multa — y la cobranza deja de mezclar cosas distintas</td>
+<td><span class="fchip" data-f="snap" title="Exporte SNAP 07-08-2026 [SCAN]">SNAP</span> <span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span></td>
+</tr>
+<tr>
+<td><span id="p-cortes"></span><strong>P24 · Criterio único para el corte por mora</strong> · <a href="../01_hallazgos/HALLAZGOS.html#n15">N15</a></td>
+<td>515 socios con boletas impagas y solo 35 servicios en corte. El estatuto no lo deja a criterio: dice que los derechos «quedarán suspendidos»</td>
+<td>Verificar qué cortes vigentes tienen acuerdo en acta; cruzar abonos no identificados contra la lista de morosos <strong>antes</strong> de cortar a alguien más; fijar el criterio en acta con convenios de pago</td>
+<td><strong>Directorio acuerda · Administrativa aplica</strong></td>
+<td>El corte deja de depender de quién revisa, y se evita cortarle a alguien que ya pagó</td>
+<td><span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span> <span class="fchip" data-f="snap" title="Exporte SNAP 07-08-2026 [SCAN]">SNAP</span></td>
+</tr>
+<tr>
+<td><span id="p-tercero"></span><strong>P20 · Tercer miembro de la Comisión Fiscalizadora de Finanzas</strong></td>
 <td>La comisión opera con 2 de 3 integrantes</td>
 <td>Proponerlo y elegirlo en la próxima asamblea</td>
 <td><strong>Asamblea</strong></td>
 <td>Los informes de la comisión ganan respaldo formal</td>
+<td><span class="fchip" data-f="estatuto" title="Estatutos y Reglamento Interno del comité [VERIFICADO]">Estatuto</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -318,10 +388,11 @@ aquí con la <strong>fecha</strong> y la <strong>evidencia</strong> (dónde qued
 tablero de arriba solo muestra lo que falta, y esta sección cuenta la historia de lo logrado.</p>
 <hr>
 <p><strong>Cobertura</strong>: este tablero contiene los <strong>13 hallazgos de la auditoría</strong> (C1–M13, cada uno
-enlazado a su evidencia) <strong>más 7 pendientes</strong> que no nacieron de la auditoría (cartolas,
-ingresos de junio, acta de centralización, preguntas abiertas, tercer miembro, y dos que
-nacieron del <a href="../07_sistema-snap/SISTEMA-SNAP.html#el-contraste">contraste SNAP</a>: los cheques
-sin registrar y el plan de cuentas del sistema). Total: 20.
+enlazado a su evidencia) <strong>más 11 pendientes</strong> que no nacieron de la auditoría de abril: cartolas,
+ingresos de junio, acta de centralización, preguntas abiertas, tercer miembro; dos del
+<a href="../07_sistema-snap/SISTEMA-SNAP.html#el-contraste">contraste SNAP</a> (cheques y plan de cuentas);
+y <strong>cuatro nacidos de los estatutos y el reglamento del comité</strong> incorporados el 07-08-2026
+(los siete libros, el inventario, el desglose de la deuda y el criterio de corte). Total: 24.
 Cuando un pendiente se resuelva, se marcará aquí — y el <a href="../INICIO.html">semáforo</a> lo reflejará.</p>
 <hr>
 <p><em>→ La evidencia de cada hallazgo: <a href="../01_hallazgos/HALLAZGOS.html">Hallazgos</a> · Los números: <a href="../03_analisis/MES-A-MES.html">Mes a mes</a> y <a href="../03_analisis/TOTALES-DEL-ANO.html">El año completo</a>.</em></p>

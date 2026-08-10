@@ -277,7 +277,13 @@
       var b = document.createElement('button');
       b.type = 'button';
       b.className = 'secchip';
-      var texto = h.textContent.replace(/^\s*\d+\s*/, '').trim();
+      /* Solo el texto propio del título: un h2 puede llevar controles
+         inyectados (el botón de notas del bloque 8) y `textContent` los
+         arrastraba al chip — «01 Tablerocómo se…». Se clona y se les saca
+         a los controles el texto antes de leer. */
+      var clon = h.cloneNode(true);
+      [].forEach.call(clon.querySelectorAll('button, .notabtn, .num'), function (x) { x.remove(); });
+      var texto = clon.textContent.replace(/^\s*\d+\s*/, '').trim();
       /* 15 caracteres por chip: la barra existe para que quepan MÁS secciones a
          la vista, y un chip con el título entero deja tres en pantalla. Acá sí
          van los puntos suspensivos — a diferencia del riel, el chip se lee de
@@ -491,6 +497,195 @@
       });
       obs.observe(document.body, { childList: true });
       document.addEventListener("DOMContentLoaded", traducir);
+    }
+  })();
+
+  /* ── BLOQUE 5 · filtro de perfil en el riel ────────────────────────────
+     El sitio del caso creció a veinte páginas y un operador, un tesorero o la
+     administrativa tenían que leer el índice entero para dar con lo suyo. Cada
+     ítem del riel viene marcado con `data-perfiles`; al elegir un rol en el
+     <select> se ocultan los que no aplican y se esconden los grupos que quedan
+     sin hijos visibles. La elección se recuerda en localStorage.
+     «Ver todo el sitio» siempre está: el filtro ayuda, nunca encierra. */
+  (function () {
+    var KEY = "caso:perfil";
+    var sel = document.getElementById("perfil-sel");
+    if (!sel) return;
+    var side = document.querySelector(".side");
+    var bar = sel.closest(".perfilbar");
+
+    function aplicar(perfil) {
+      [].slice.call(side.querySelectorAll(".navitem")).forEach(function (a) {
+        if (!perfil) { a.hidden = false; return; }
+        var val = a.getAttribute("data-perfiles");
+        if (val === null) { a.hidden = false; return; }   // sin marcar → se respeta
+        var lista = val.split(/\s+/).filter(Boolean);
+        // La página actual nunca se oculta: dejar al lector sin su propio ítem
+        // en el riel desorienta más de lo que el filtro ayuda.
+        a.hidden = lista.indexOf(perfil) === -1 && !a.hasAttribute("aria-current");
+      });
+      [].slice.call(side.querySelectorAll(".navgroup")).forEach(function (g) {
+        var vivos = [].slice.call(g.querySelectorAll(".navitem")).some(function (a) { return !a.hidden; });
+        g.hidden = !vivos;
+        var head = side.querySelector('.navlabel[data-group="' + g.getAttribute("data-group") + '"]');
+        if (head) head.hidden = !vivos;
+      });
+
+      var nota = side.querySelector(".perfilnota");
+      if (perfil) {
+        var texto = sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].text : perfil;
+        if (!nota) {
+          nota = document.createElement("div");
+          nota.className = "perfilnota";
+          bar.parentNode.insertBefore(nota, bar.nextSibling);
+        }
+        nota.innerHTML = "Mostrando lo de <b>" + texto + "</b>. Elige «Ver todo el sitio» para el índice completo.";
+      } else if (nota) {
+        nota.remove();
+      }
+      try { localStorage.setItem(KEY, perfil); } catch (e) { /* modo privado */ }
+    }
+
+    sel.addEventListener("change", function () { aplicar(sel.value); });
+
+    var guardado = "";
+    try { guardado = localStorage.getItem(KEY) || ""; } catch (e) { /* noop */ }
+    if (guardado && sel.querySelector('option[value="' + guardado + '"]')) {
+      sel.value = guardado;
+      aplicar(guardado);
+    }
+  })();
+
+  /* ── Bloque 6: señal de scroll en la barra de secciones ──────────────────
+     La barra es de una sola fila (ver `.secbar` en case-chrome.css). Cuando no
+     alcanzan a caber todas las píldoras, hay que avisarlo: sin señal el lector
+     no sabe que existen las secciones que quedaron fuera del borde. Marca
+     .has-more mientras quede scroll a la derecha; el degradado vive en el CSS.
+
+     ⚠ La barra la construye el shell DESPUÉS de que corre este archivo, así que
+     no se puede capturar el elemento una sola vez al inicio — hay que
+     re-consultarlo en cada revisión o el bloque queda inerte para siempre. */
+  (function () {
+    function revisar() {
+      var bar = document.querySelector(".secbar");
+      if (!bar) return;
+      bar.classList.toggle("has-more", bar.scrollWidth - bar.clientWidth - bar.scrollLeft > 4);
+    }
+    document.addEventListener("scroll", revisar, { passive: true, capture: true });
+    window.addEventListener("resize", revisar);
+    if (window.MutationObserver) {
+      new MutationObserver(revisar).observe(document.body, {
+        childList: true, subtree: true, attributes: true, attributeFilter: ["class"],
+      });
+    }
+    revisar();
+  })();
+
+  /* ── Bloque 7: abrir la ficha a la que se salta ──────────────────────────
+     Las fichas de acción son <details> cerrados. Si un enlace apunta a una
+     (#a-p22 desde el tablero) el navegador salta al elemento pero lo deja
+     cerrado: el lector llega y no ve nada. Se abre la ficha destino al cargar
+     y en cada cambio de hash, y se re-centra porque abrirla mueve el layout. */
+  (function () {
+    function abrirDestino() {
+      var id = location.hash.slice(1);
+      if (!id) return;
+      var el = document.getElementById(id);
+      if (!el) return;
+      var ficha = el.tagName === "DETAILS" ? el : el.closest && el.closest("details");
+      if (!ficha) return;
+      ficha.open = true;
+      requestAnimationFrame(function () {
+        ficha.scrollIntoView({ block: "start", behavior: "auto" });
+      });
+    }
+    window.addEventListener("hashchange", abrirDestino);
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", abrirDestino);
+    } else {
+      abrirDestino();
+    }
+  })();
+
+  /* ── Bloque 8: notas de uso plegables ────────────────────────────────────
+     Cada título de sección con notas debajo recibe un botón que las muestra u
+     oculta. Por defecto van OCULTAS: quien vuelve a la página busca un dato,
+     no el instructivo. La primera vez el botón está a la vista, en el título.
+
+     El criterio de qué es nota vive en `case-chrome.css` (.nota). Aquí solo se
+     agrupa por sección: el Markdown produce una secuencia plana —h2, p, table,
+     h2— así que "la sección" son los hermanos entre un h2 y el siguiente. */
+  (function () {
+    var doc = document.querySelector(".docbody");
+    if (!doc || !doc.querySelector(".nota")) return;
+    var KEY = "caso:notas:" + location.pathname.split("/").slice(-2).join("/");
+    var abiertas = {};
+    try { abiertas = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { /* noop */ }
+
+    var CHEVRON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>';
+
+    function notasDe(h) {
+      // Hasta el PRÓXIMO TÍTULO DE CUALQUIER NIVEL: una nota pertenece al
+      // título que la precede y a ninguno más. Si el corte fuera solo en h2,
+      // un h2 se llevaría también las notas de sus h3 y la misma nota tendría
+      // dos dueños: al plegar uno el otro queda mintiendo sobre su estado.
+      var out = [], n = h.nextElementSibling;
+      while (n && !/^H[1-6]$/.test(n.tagName)) {
+        if (n.classList.contains("nota")) out.push(n);
+        n = n.nextElementSibling;
+      }
+      return out;
+    }
+
+    function montar(notas, id, donde) {
+      var visible = abiertas[id] === true;
+
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "notabtn no-print";
+      btn.setAttribute("aria-expanded", visible ? "true" : "false");
+      btn.innerHTML = CHEVRON + "<span>cómo se usa</span>";
+      btn.title = "Mostrar u ocultar las explicaciones de uso de esta sección";
+
+      function pintar() {
+        notas.forEach(function (n) { n.hidden = !visible; });
+        btn.setAttribute("aria-expanded", visible ? "true" : "false");
+        btn.querySelector("span").textContent = visible ? "ocultar" : "cómo se usa";
+      }
+      btn.addEventListener("click", function () {
+        visible = !visible;
+        pintar();
+        abiertas[id] = visible;
+        try { localStorage.setItem(KEY, JSON.stringify(abiertas)); } catch (e) { /* noop */ }
+      });
+      donde(btn);
+      pintar();
+    }
+
+    [].forEach.call(doc.querySelectorAll("h2, h3"), function (h) {
+      var notas = notasDe(h);
+      if (!notas.length) return;
+      montar(notas, h.id || h.textContent.trim().slice(0, 24), function (btn) {
+        h.appendChild(btn);
+      });
+    });
+
+    /* Notas del preámbulo: van ANTES del primer título, así que ningún título
+       las reclama y sin esto quedaban visibles para siempre — justo el texto
+       que más estorba, porque encabeza la página. `build-html.py` saca el h1
+       del cuerpo (vive en la barra superior), así que no hay título al cual
+       colgarse: se les pone un botón propio delante de la primera. */
+    var primerTitulo = doc.querySelector("h1, h2, h3");
+    var sueltas = [].filter.call(doc.querySelectorAll(".nota"), function (n) {
+      return !primerTitulo || (n.compareDocumentPosition(primerTitulo) & Node.DOCUMENT_POSITION_FOLLOWING);
+    });
+    if (sueltas.length) {
+      montar(sueltas, "__preambulo", function (btn) {
+        var caja = document.createElement("p");
+        caja.className = "notabtn-solo no-print";
+        caja.appendChild(btn);
+        sueltas[0].parentNode.insertBefore(caja, sueltas[0]);
+      });
     }
   })();
 })();

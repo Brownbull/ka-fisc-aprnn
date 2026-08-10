@@ -52,48 +52,55 @@
   </span>
   <span><b>Apr Nancul Norte</b><small>El Fiscalizador · 202603</small></span>
   </div>
-  <button type="button" class="navlabel g-now navtoggle" data-group="entregable" aria-expanded="true">Entregable<span class="navchevron" aria-hidden="true"></span></button>
-  <div class="navgroup" data-group="entregable">
-  <a class="navitem" href="../../99_entregable/INICIO.html" title="Cuentas claras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Cuentas claras</span> <span class="count">4</span></a>
-  </div>
-  <button type="button" class="navlabel g-ent navtoggle" data-group="hallazgos" aria-expanded="true">Hallazgos<span class="navchevron" aria-hidden="true"></span></button>
-  <div class="navgroup" data-group="hallazgos">
-  <a class="navitem" href="../../99_entregable/01_hallazgos/HALLAZGOS.html" title="Hallazgos de la auditoría de abril 2026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> <span class="navtext">Hallazgos de la audi</span> <span class="count">3</span></a>
-  </div>
-  <button type="button" class="navlabel g-code navtoggle" data-group="pendientes" aria-expanded="true">Pendientes<span class="navchevron" aria-hidden="true"></span></button>
-  <div class="navgroup" data-group="pendientes">
-  <a class="navitem" href="../../99_entregable/02_pendientes/PENDIENTES.html" title="Pendientes: el tablero completo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Pendientes</span> <span class="count">4</span></a>
-  </div>
-  <button type="button" class="navlabel g-test navtoggle" data-group="analisis" aria-expanded="true">Analisis<span class="navchevron" aria-hidden="true"></span></button>
+  <div class="perfilbar"><label class="perfillabel" for="perfil-sel"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Soy…</label><select id="perfil-sel" class="perfilsel" aria-label="Ver el sitio según tu rol"><option value="">Ver todo el sitio</option><option value="socio">Socio</option><option value="presidente">Presidente</option><option value="tesorero">Tesorero/a</option><option value="secretario">Secretario/a</option><option value="administrativa">Administrativa</option><option value="operador">Operador</option><option value="comision">Comisión</option></select></div>
+  <button type="button" class="navlabel g-now navtoggle" data-group="analisis" aria-expanded="true">Analisis<span class="navchevron" aria-hidden="true"></span></button>
   <div class="navgroup" data-group="analisis">
-  <a class="navitem" href="../../99_entregable/03_analisis/MES-A-MES.html" title="Mes a mes: los números de cada mes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Mes a mes</span> <span class="count">1</span></a>
-  <a class="navitem" href="../../99_entregable/03_analisis/TOTALES-DEL-ANO.html" title="El año completo: agregados y tendencias"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">El año completo</span> <span class="count">9</span></a>
+  <a class="navitem" data-perfiles="comision presidente socio tesorero" href="../../99_entregable/03_analisis/MES-A-MES.html" title="Mes a mes: los números de cada mes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Mes a mes</span> <span class="count">1</span></a>
+  <a class="navitem" data-perfiles="comision presidente socio tesorero" href="../../99_entregable/03_analisis/TOTALES-DEL-ANO.html" title="El año completo: agregados y tendencias"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">El año completo</span> <span class="count">9</span></a>
+  <a class="navitem" data-perfiles="comision presidente socio tesorero" href="../../99_entregable/03_analisis/PROYECCIONES.html" title="Proyecciones y decisiones que vienen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg> <span class="navtext">Proyecciones y decis</span> <span class="count">9</span></a>
+  </div>
+  <button type="button" class="navlabel g-ent navtoggle" data-group="entregable" aria-expanded="true">Entregable<span class="navchevron" aria-hidden="true"></span></button>
+  <div class="navgroup" data-group="entregable">
+  <a class="navitem" data-perfiles="administrativa comision operador presidente secretario socio tesorero" href="../../99_entregable/INICIO.html" title="Cuentas claras"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Cuentas claras</span> <span class="count">4</span></a>
+  </div>
+  <button type="button" class="navlabel g-code navtoggle" data-group="hallazgos" aria-expanded="true">Hallazgos<span class="navchevron" aria-hidden="true"></span></button>
+  <div class="navgroup" data-group="hallazgos">
+  <a class="navitem" data-perfiles="comision presidente tesorero" href="../../99_entregable/01_hallazgos/HALLAZGOS.html" title="Hallazgos de la auditoría de abril 2026"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> <span class="navtext">Hallazgos de la audi</span> <span class="count">3</span></a>
+  </div>
+  <button type="button" class="navlabel g-test navtoggle" data-group="pendientes" aria-expanded="true">Pendientes<span class="navchevron" aria-hidden="true"></span></button>
+  <div class="navgroup" data-group="pendientes">
+  <a class="navitem" data-perfiles="administrativa comision presidente secretario socio tesorero" href="../../99_entregable/02_pendientes/PENDIENTES.html" title="Pendientes: el tablero completo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Pendientes</span> <span class="count">4</span></a>
   </div>
   <button type="button" class="navlabel g-docs navtoggle" data-group="datos" aria-expanded="true">Datos<span class="navchevron" aria-hidden="true"></span></button>
   <div class="navgroup" data-group="datos">
-  <a class="navitem" href="../../99_entregable/04_datos/MAPA-DE-DATOS.html" title="Dónde viven los datos del comité"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Dónde viven los dato</span> <span class="count">3</span></a>
+  <a class="navitem" data-perfiles="administrativa comision tesorero" href="../../99_entregable/04_datos/MAPA-DE-DATOS.html" title="Dónde viven los datos del comité"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Dónde viven los dato</span> <span class="count">3</span></a>
   </div>
   <button type="button" class="navlabel g-board navtoggle" data-group="operacion" aria-expanded="true">Operación<span class="navchevron" aria-hidden="true"></span></button>
   <div class="navgroup" data-group="operacion">
-  <a class="navitem" aria-current="page" href="../../99_entregable/05_operacion/01_manual-documentos-apr.html" title="Manual de Documentos — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Manual de Documentos</span> <span class="count">9</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/02_operaciones-periodicas.html" title="Operaciones Periódicas — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg> <span class="navtext">Operaciones Periódic</span> <span class="count">8</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/04_politica-gastos-autorizacion.html" title="Política de Gastos y Autorización — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> <span class="navtext">Política de Gastos y</span> <span class="count">7</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/05_matriz-responsabilidades.html" title="Matriz de Responsabilidades — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Matriz de Responsabi</span> <span class="count">8</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/06_guia-rendicion-anual.html" title="Guía de Rendición Anual — Para el Tesorero/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía de Rendición An</span> <span class="count">7</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/administrativa.html" title="Guía Administrativa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Administrativa</span> <span class="count">4</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/comision-revisora.html" title="Guía Comisión Revisora de Cuentas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Comisión Reviso</span> <span class="count">6</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/operadores.html" title="Guía Operadores de Planta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Operadores de P</span> <span class="count">6</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/presidente.html" title="Guía Presidente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Presidente</span> <span class="count">7</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/secretaria.html" title="Guía Secretario/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Secretario/a</span> <span class="count">5</span></a>
-  <a class="navitem" href="../../99_entregable/05_operacion/roles/tesorero.html" title="Guía Tesorero/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Tesorero/a</span> <span class="count">5</span></a>
+  <a class="navitem" aria-current="page" data-perfiles="administrativa operador presidente secretario tesorero" href="../../99_entregable/05_operacion/01_manual-documentos-apr.html" title="Manual de Documentos — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Manual de Documentos</span> <span class="count">9</span></a>
+  <a class="navitem" data-perfiles="administrativa operador tesorero" href="../../99_entregable/05_operacion/02_operaciones-periodicas.html" title="Operaciones Periódicas — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg> <span class="navtext">Operaciones Periódic</span> <span class="count">8</span></a>
+  <a class="navitem" data-perfiles="presidente tesorero" href="../../99_entregable/05_operacion/04_politica-gastos-autorizacion.html" title="Política de Gastos y Autorización — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> <span class="navtext">Política de Gastos y</span> <span class="count">7</span></a>
+  <a class="navitem" data-perfiles="presidente secretario" href="../../99_entregable/05_operacion/05_matriz-responsabilidades.html" title="Matriz de Responsabilidades — APR Ñancul Norte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Matriz de Responsabi</span> <span class="count">8</span></a>
+  <a class="navitem" data-perfiles="comision tesorero" href="../../99_entregable/05_operacion/06_guia-rendicion-anual.html" title="Guía de Rendición Anual — Para el Tesorero/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía de Rendición An</span> <span class="count">7</span></a>
+  <a class="navitem" data-perfiles="administrativa comision presidente tesorero" href="../../99_entregable/05_operacion/07_como-comprar-y-rendir.html" title="Cómo comprar y cómo rendir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Cómo comprar y cómo</span> <span class="count">5</span></a>
+  <a class="navitem" data-perfiles="administrativa" href="../../99_entregable/05_operacion/roles/administrativa.html" title="Guía Administrativa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Administrativa</span> <span class="count">4</span></a>
+  <a class="navitem" data-perfiles="comision" href="../../99_entregable/05_operacion/roles/comision-revisora.html" title="Guía Comisión Fiscalizadora de Finanzas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Comisión Fiscal</span> <span class="count">6</span></a>
+  <a class="navitem" data-perfiles="operador" href="../../99_entregable/05_operacion/roles/operadores.html" title="Guía Operadores de Planta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Operadores de P</span> <span class="count">6</span></a>
+  <a class="navitem" data-perfiles="presidente" href="../../99_entregable/05_operacion/roles/presidente.html" title="Guía Presidente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Presidente</span> <span class="count">7</span></a>
+  <a class="navitem" data-perfiles="secretario" href="../../99_entregable/05_operacion/roles/secretaria.html" title="Guía Secretario/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Secretario/a</span> <span class="count">5</span></a>
+  <a class="navitem" data-perfiles="tesorero" href="../../99_entregable/05_operacion/roles/tesorero.html" title="Guía Tesorero/a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Guía Tesorero/a</span> <span class="count">5</span></a>
   </div>
   <button type="button" class="navlabel g-ledger navtoggle" data-group="extra" aria-expanded="true">Extra<span class="navchevron" aria-hidden="true"></span></button>
   <div class="navgroup" data-group="extra">
-  <a class="navitem" href="../../99_entregable/06_extra/INFO-ADICIONAL.html" title="Información adicional"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Información adiciona</span> <span class="count">8</span></a>
+  <a class="navitem" data-perfiles="socio" href="../../99_entregable/06_extra/INFO-ADICIONAL.html" title="Información adicional"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Información adiciona</span> <span class="count">8</span></a>
   </div>
   <button type="button" class="navlabel g-rel navtoggle" data-group="sistema-snap" aria-expanded="true">Sistema Snap<span class="navchevron" aria-hidden="true"></span></button>
   <div class="navgroup" data-group="sistema-snap">
-  <a class="navitem" href="../../99_entregable/07_sistema-snap/SISTEMA-SNAP.html" title="El sistema SNAP — qué descargamos y qué dice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">El sistema SNAP</span> <span class="count">5</span></a>
+  <a class="navitem" data-perfiles="administrativa comision tesorero" href="../../99_entregable/07_sistema-snap/SISTEMA-SNAP.html" title="El sistema SNAP — qué descargamos y qué dice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">El sistema SNAP</span> <span class="count">5</span></a>
+  </div>
+  <button type="button" class="navlabel g-leaf navtoggle" data-group="informes" aria-expanded="true">Informes<span class="navchevron" aria-hidden="true"></span></button>
+  <div class="navgroup" data-group="informes">
+  <a class="navitem" data-perfiles="comision presidente socio tesorero" href="../../99_entregable/08_informes/INFORME-01.html" title="Comisión · ago 2026 — Informe de fiscalización N° 1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg> <span class="navtext">Comisión · ago 2026</span> <span class="count">8</span></a>
   </div>
 </aside>
 
@@ -102,7 +109,7 @@
     <div class="crumb"><a href="../../index.html">Inicio</a> › Operación › <b>Manual de Documentos — APR Ñancul Norte</b></div>
     <div class="spacer"></div>
     <div class="case-actions"><span class="case-badge">CONFIDENCIAL</span><button class="case-btn no-print" onclick="window.print()" title="Exportar a PDF">PDF</button><button class="case-btn is-primary no-print" id="pii-load-btn" title="Cargar pii-manifest.json desde tu equipo">Revelar datos</button><span class="pii-status no-print" id="pii-status"></span></div>
-    <span class="stamp">regen · 2026-08-07 17:11</span>
+    <span class="stamp">regen · 2026-08-10 17:25</span>
   </div>
   <div class="subject">
     <div class="subjecthead">
@@ -117,84 +124,116 @@
         <article class="docbody">
           <div class="disclaimer-bar no-print">Documento orientativo, no vinculante. Elaborado con apoyo de IA. Consulte a un profesional habilitado.</div><div class="priority-filter no-print" id="priority-filter" style="display:none;"><span class="filter-label">Filtrar:</span><button class="filter-btn active" data-priority="all">Todos</button><button class="filter-btn" data-priority="critico">Crítico</button><button class="filter-btn" data-priority="importante">Importante</button><button class="filter-btn" data-priority="deseable">Deseable</button></div><blockquote>
 <p>Este manual explica cómo funciona la organización de documentos del APR.
-Dudas: contactar a la comisión revisora en las asambleas, o al correo del comité <strong>contacto@aprnanculnorte.cl</strong></p>
+Dudas: contactar a la Comisión Fiscalizadora de Finanzas en las asambleas, o al correo del comité <strong>contacto@aprnanculnorte.cl</strong></p>
 </blockquote>
 <hr>
 <p style="font-size:.85em;opacity:.8">🛠 <b>Para el comité</b> — administrativa, tesorería, secretaría, presidencia. Responde: <i>¿cómo se organiza y opera el archivo?</i></p>
 
-<h2 id="documentos-disponibles"><span class="num">01</span>Documentos disponibles</h2>
-<p>En la carpeta <code>00_apr_auditoria_comision/</code> están estos documentos de referencia:</p>
+<h2 id="documentos"><span class="num">01</span>Documentos</h2>
+<p class="nota">Estos son los documentos de referencia del comité. <b>Cada uno se puede leer aquí mismo o descargar en PDF</b> para imprimirlo, mandarlo por correo o tenerlo a mano sin internet.</p>
+
 <div class="table-wrapper"><table>
 <thead>
 <tr>
 <th>Documento</th>
 <th>Qué contiene</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>01_manual-documentos-apr.md</strong></td>
+<td><strong><a href="01_manual-documentos-apr.html">Manual de documentos</a></strong></td>
 <td>Este documento — cómo funciona la organización de carpetas</td>
+<td><a href="01_manual-documentos-apr.pdf" download>PDF</a></td>
 </tr>
 <tr>
-<td><strong>02_operaciones-periodicas.md</strong></td>
+<td><strong><a href="02_operaciones-periodicas.html">Operaciones periódicas</a></strong></td>
 <td>Qué subir cada mes, cada 3 meses y antes de la asamblea</td>
+<td><a href="02_operaciones-periodicas.pdf" download>PDF</a></td>
+</tr>
+<tr>
+<td><strong><a href="04_politica-gastos-autorizacion.html">Política de gastos</a></strong></td>
+<td>Quién autoriza cada gasto, reglas de caja chica, fondo de reserva</td>
+<td><a href="04_politica-gastos-autorizacion.pdf" download>PDF</a></td>
+</tr>
+<tr>
+<td><strong><a href="05_matriz-responsabilidades.html">Matriz de responsabilidades</a></strong></td>
+<td>Qué hace cada persona (administrativa, tesorero, contador, presidente)</td>
+<td><a href="05_matriz-responsabilidades.pdf" download>PDF</a></td>
+</tr>
+<tr>
+<td><strong><a href="06_guia-rendicion-anual.html">Guía de rendición anual</a></strong></td>
+<td>Paso a paso para preparar la rendición anual (para el tesorero/a)</td>
+<td><a href="06_guia-rendicion-anual.pdf" download>PDF</a></td>
+</tr>
+<tr>
+<td><strong><a href="07_como-comprar-y-rendir.html">Cómo comprar y cómo rendir</a></strong></td>
+<td>El vale de rendición y 8 casos paso a paso: qué documento pedir en cada compra</td>
+<td><a href="07_como-comprar-y-rendir.pdf" download>PDF</a></td>
 </tr>
 <tr>
 <td><strong>Directorio del comité</strong> <em>(interno)</em></td>
-<td>Nombres, teléfonos y emails de cada cargo. Tiene datos personales, por eso <strong>no se publica en este sitio</strong>: se pide a la directiva o a la comisión</td>
-</tr>
-<tr>
-<td><strong>04_politica-gastos-autorizacion.md</strong></td>
-<td>Quién autoriza cada gasto, reglas de caja chica, fondo de reserva</td>
-</tr>
-<tr>
-<td><strong>05_matriz-responsabilidades.md</strong></td>
-<td>Qué hace cada persona (administrativa, tesorero, contador, presidente)</td>
-</tr>
-<tr>
-<td><strong>06_guia-rendicion-anual.md</strong></td>
-<td>Paso a paso para preparar la rendición anual (para el tesorero/a)</td>
+<td>Nombres, teléfonos y emails de cada cargo. Tiene datos personales, por eso <strong>no se publica ni se descarga desde este sitio</strong>: se pide a la directiva o a la comisión</td>
+<td>—</td>
 </tr>
 </tbody>
 </table></div>
-<p>En la carpeta <code>roles/</code> hay una guía por cargo. Cada persona lee <strong>solo la suya</strong>:</p>
+<p>En la carpeta <code>roles/</code> hay una guía por cargo. Cada persona lee <strong>solo la suya</strong> — y puede
+imprimirla y dejarla pegada donde trabaja:</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
 <th>Guía</th>
 <th>Para quién</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>roles/administrativa.md</strong></td>
+<td><strong><a href="roles/administrativa.html">Administrativa</a></strong></td>
 <td>Administrativa — día a día, archivos, caja chica, exportar PDF</td>
+<td><a href="roles/administrativa.pdf" download>PDF</a></td>
 </tr>
 <tr>
-<td><strong>roles/secretaria.md</strong></td>
+<td><strong><a href="roles/secretaria.html">Secretario/a</a></strong></td>
 <td>Secretario/a — actas, convocatorias, correspondencia, libro de actas</td>
+<td><a href="roles/secretaria.pdf" download>PDF</a></td>
 </tr>
 <tr>
-<td><strong>roles/tesorero.md</strong></td>
+<td><strong><a href="roles/tesorero.html">Tesorero/a</a></strong></td>
 <td>Tesorero/a — conciliación, Previred, cierre mensual, coordinación contador</td>
+<td><a href="roles/tesorero.pdf" download>PDF</a></td>
 </tr>
 <tr>
-<td><strong>roles/presidente.md</strong></td>
+<td><strong><a href="roles/presidente.html">Presidente</a></strong></td>
 <td>Presidente — supervisión, firmas, convocatoria asamblea, licencias</td>
+<td><a href="roles/presidente.pdf" download>PDF</a></td>
 </tr>
 <tr>
-<td><strong>roles/comision-revisora.md</strong></td>
+<td><strong><a href="roles/comision-revisora.html">Comisión Fiscalizadora</a></strong></td>
 <td>Comisión — qué revisamos, qué NO hacemos, calendario</td>
+<td><a href="roles/comision-revisora.pdf" download>PDF</a></td>
 </tr>
 <tr>
-<td><strong>roles/operadores.md</strong></td>
+<td><strong><a href="roles/operadores.html">Operadores</a></strong></td>
 <td>Operadores — registro cloración, mantención, emergencias</td>
+<td><a href="roles/operadores.pdf" download>PDF</a></td>
 </tr>
 </tbody>
 </table></div>
+<p>Aparte de estas guías hay dos documentos más que se descargan del sitio:
+el <strong><a href="vale-de-rendicion.pdf">vale de rendición en blanco</a></strong> —para imprimir y llenar a mano cada vez
+que se compra con boleta— y el <strong><a href="../08_informes/INFORME-01.pdf">informe de la Comisión</a></strong> (<code>Comisión · ago 2026</code>), que es el
+que se lleva firmado a la asamblea.</p>
+<blockquote>
+<p><strong>Lo que no se descarga desde aquí.</strong> El <code>Libro de Caja_Registro Oficial.xlsx</code>, las cartolas del
+banco, las liquidaciones de sueldo y las actas <strong>no están en este sitio</strong>: contienen datos
+bancarios y personales, viven en el Drive del comité y se piden por los canales de más abajo.
+Este sitio publica las <strong>guías</strong> —cómo se hace cada cosa—, no los <strong>registros</strong>.</p>
+</blockquote>
 <hr>
-<h2 id="el-libro-de-caja-consolidado"><span class="num">02</span>El Libro de Caja consolidado</h2>
+<p><span id="el-libro-de-caja-consolidado"></span></p>
+<h2 id="el-libro"><span class="num">02</span>El Libro</h2>
 <p>Desde mayo 2026, <strong>todos los números del comité viven en un solo archivo</strong>:
 <code>Libro de Caja_Registro Oficial.xlsx</code>. Es la fuente única acordada con la directiva —
 las auditorías, la guía mensual y los análisis de la comisión salen de ahí.</p>
@@ -229,7 +268,7 @@ las auditorías, la guía mensual y los análisis de la comisión salen de ahí.
 lectura absoluta — la comisión respalda copias y trabaja sobre ellas, nunca modifica el original.</p>
 </blockquote>
 <hr>
-<h2 id="lo-mas-importante"><span class="num">03</span>Lo más importante</h2>
+<h2 id="lo-esencial"><span class="num">03</span>Lo esencial</h2>
 <p>Hay <strong>3 cosas</strong> que el APR necesita tener al día para no tener problemas:</p>
 <ol>
 <li><strong>Que cada peso tenga respaldo</strong> — todo gasto con su boleta, todo ingreso anotado</li>
@@ -238,7 +277,7 @@ lectura absoluta — la comisión respalda copias y trabaja sobre ellas, nunca m
 </ol>
 <p>Si estos 3 puntos están bien, el APR está en buen camino.</p>
 <hr>
-<h2 id="quien-hace-que"><span class="num">04</span>¿Quién hace qué?</h2>
+<h2 id="quien"><span class="num">04</span>Quién</h2>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -277,7 +316,8 @@ lectura absoluta — la comisión respalda copias y trabaja sobre ellas, nunca m
 <p>Detalle completo en <strong>02_operaciones-periodicas.md</strong> · Quién hace qué en detalle en <strong>05_matriz-responsabilidades.md</strong></p>
 </blockquote>
 <hr>
-<h2 id="carpetas-del-google-drive"><span class="num">05</span>Carpetas del Google Drive</h2>
+<p><span id="carpetas-del-google-drive"></span></p>
+<h2 id="carpetas"><span class="num">05</span>Carpetas</h2>
 <p>El archivo general del comité vive en una carpeta compartida de Google Drive, administrada por
 el comité. <strong>Para pedir acceso</strong>: escribir a <strong>contacto@aprnanculnorte.cl</strong> (administrativa)
 indicando nombre y calidad de socio.</p>
@@ -296,7 +336,7 @@ indicando nombre y calidad de socio.</p>
 ¿Es un exporte de SNAP?  → 05_snap / fecha /
 </code></pre>
 <hr>
-<h2 id="como-nombrar-los-archivos"><span class="num">06</span>Cómo nombrar los archivos</h2>
+<h2 id="nombres"><span class="num">06</span>Nombres</h2>
 <p>Empezar siempre con el año y mes para que se ordenen solos:</p>
 <div class="table-wrapper"><table>
 <thead>
@@ -325,7 +365,7 @@ indicando nombre y calidad de socio.</p>
 </tbody>
 </table></div>
 <hr>
-<h2 id="senales-de-alerta"><span class="num">07</span>Señales de alerta</h2>
+<h2 id="alertas"><span class="num">07</span>Alertas</h2>
 <p>Si pasa alguna de estas cosas, hay que resolverlo rápido:</p>
 <div class="table-wrapper"><table>
 <thead>
@@ -358,25 +398,25 @@ indicando nombre y calidad de socio.</p>
 </tbody>
 </table></div>
 <hr>
-<h2 id="reglas-de-oro"><span class="num">08</span>Reglas de oro</h2>
+<h2 id="reglas"><span class="num">08</span>Reglas</h2>
 <ol>
 <li><strong>Un archivo, un lugar.</strong> No copies el mismo archivo en varias carpetas.</li>
 <li><strong>No borres archivos de otros.</strong> Si algo está mal ubicado, muévelo — no lo elimines.</li>
 <li><strong>Documentos firmados siempre en PDF.</strong> No foto, no Word.</li>
-<li><strong>Si no sabes dónde va, pregunta a la comisión revisora.</strong></li>
+<li><strong>Si no sabes dónde va, pregunta a la Comisión Fiscalizadora de Finanzas.</strong></li>
 </ol>
 <hr>
-<h2 id="preguntas-frecuentes"><span class="num">09</span>Preguntas frecuentes</h2>
+<h2 id="preguntas"><span class="num">09</span>Preguntas</h2>
 <p><strong>¿Qué hago si no tengo un documento?</strong>
-Pregunta a quien corresponda (administrativa, tesorero, contador o presidente). Si nadie lo tiene, avisa a la comisión revisora.</p>
+Pregunta a quien corresponda (administrativa, tesorero, contador o presidente). Si nadie lo tiene, avisa a la Comisión Fiscalizadora de Finanzas.</p>
 <p><strong>¿Qué hago si subí un archivo en el lugar equivocado?</strong>
 Muévelo: clic derecho sobre el archivo → Mover → busca la carpeta correcta. No lo borres.</p>
 <p><strong>¿Cada cuánto revisa la comisión?</strong>
 Una vez al mes. Si falta algo, te avisamos para que lo subas.</p>
 <p><strong>¿Quién puede ver los documentos?</strong>
-Todos pueden ver, pero solo la administrativa y el tesorero pueden subir archivos. La comisión revisora solo lee.</p>
+Todos pueden ver, pero solo la administrativa y el tesorero pueden subir archivos. La Comisión Fiscalizadora de Finanzas solo lee.</p>
 <hr>
-<p><em>Comisión Revisora de Cuentas — APR Ñancul Norte — Marzo 2026</em></p>
+<p><em>Comisión Fiscalizadora de Finanzas — APR Ñancul Norte — Marzo 2026</em></p>
         </article>
         <p class="docsource">Fuente: <code>99_entregable/05_operacion/01_manual-documentos-apr.md</code></p>
       </section>

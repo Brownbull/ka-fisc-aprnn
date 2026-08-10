@@ -141,7 +141,11 @@
   .docbody { max-width: 100% !important; }
   body { font-size: 11pt; line-height: 1.4; }
   a { text-decoration: none; }
-  a[href]::after { content: " (" attr(href) ")"; font-size: .8em; color: #666; }
+  /* Solo se expande la URL cuando sirve en papel. Una ruta relativa
+     (`../05_operacion/roles/tesorero.html#firmas`) no se puede tipear ni seguir
+     desde una hoja impresa: solo corta la lectura. Las absolutas sí se conservan. */
+  a[href]::after { content: none; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; color: #666; }
   .pii-redacted { background: #ccc !important; color: #ccc !important; }
 }
 
@@ -318,11 +322,127 @@
   .score-ring .number { font-size: 1.35rem; }
 }
 
-/* Píldoras de sección (.secbar): con 5+ secciones el scroller horizontal deja
-   las últimas fuera de vista casi sin señal. Se permite envolver para que todas
-   las secciones queden visibles; el autoscroll de case-chrome.js queda inerte
-   (scrollWidth == clientWidth) sin efectos secundarios. */
-.secbar { flex-wrap: wrap; overflow-x: visible; }
+/* ══ Marcas de estado (.marca) ═════════════════════════════════════════════
+   Etiqueta de un resultado en cuatro niveles, para que el lector sepa cómo le
+   fue ANTES de leer el párrafo. Cuatro y no tres: entre «bien» y «alerta» hay
+   un estado que se pierde si no se nombra — lo que hoy está correcto pero se
+   sostiene sin estructura, y basta un cambio para que deje de estarlo.
+
+     bien    ● verificado y correcto
+     fragil  ◐ correcto hoy, sin nada que lo sostenga mañana
+     alerta  ▲ todavía no falla, pero va camino a fallar
+     falla   ■ está mal o falta
+
+   El símbolo NO es decoración: el color solo no sirve para quien no lo
+   distingue ni para una fotocopia en blanco y negro, y estas páginas se
+   imprimen y circulan en papel. Cada nivel lleva glifo propio y su palabra. */
+.marca {
+  display: inline-flex; align-items: center; gap: 5px; vertical-align: middle;
+  margin-left: 10px; padding: 2px 9px 2px 7px;
+  font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+  letter-spacing: .04em; text-transform: uppercase; white-space: nowrap;
+  border: 1px solid currentColor; border-radius: 999px;
+}
+.marca::before { font-size: 9px; line-height: 1; }
+.marca[data-m="bien"]   { color: #1f8a4c; }
+.marca[data-m="bien"]::before   { content: "●"; }
+.marca[data-m="fragil"] { color: #7a9a1e; }
+.marca[data-m="fragil"]::before { content: "◐"; }
+.marca[data-m="alerta"] { color: #c07f00; }
+.marca[data-m="alerta"]::before { content: "▲"; }
+.marca[data-m="falla"]  { color: #d03b3b; }
+.marca[data-m="falla"]::before  { content: "■"; }
+
+/* En tema oscuro los mismos tonos se apagan contra el fondo. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .marca[data-m="bien"]   { color: #4cc47f; }
+  :root:not([data-theme="light"]) .marca[data-m="fragil"] { color: #a8c93a; }
+  :root:not([data-theme="light"]) .marca[data-m="alerta"] { color: #e0a52e; }
+  :root:not([data-theme="light"]) .marca[data-m="falla"]  { color: #f0736f; }
+}
+:root[data-theme="dark"] .marca[data-m="bien"]   { color: #4cc47f; }
+:root[data-theme="dark"] .marca[data-m="fragil"] { color: #a8c93a; }
+:root[data-theme="dark"] .marca[data-m="alerta"] { color: #e0a52e; }
+:root[data-theme="dark"] .marca[data-m="falla"]  { color: #f0736f; }
+
+/* Tira de conteo: cuántos resultados hay de cada nivel. */
+.marcador { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+.marcador .marca { margin-left: 0; }
+.marcador .marca b { font-weight: 700; font-size: 12px; }
+
+/* ══ Notas de uso plegables (.nota) ════════════════════════════════════════
+   Una página de caso mezcla dos cosas: los RESULTADOS (lo que se encontró) y
+   las INSTRUCCIONES DE USO (cómo leer la tabla, cómo avisar un avance, qué
+   significa una columna). Lo segundo ayuda la primera vez y estorba siempre
+   después — el lector que vuelve a buscar un dato tiene que saltárselo.
+
+   Regla de marcado, para que el criterio no dependa del ánimo del que escribe:
+   se marca `.nota` el texto que enseña a OPERAR el documento. NO se marca lo
+   que afirma qué se encontró, qué significa o cuáles son sus límites: eso es
+   contenido y se muestra siempre. Una advertencia de interpretación («esto no
+   significa que falte plata») es contenido, no nota.
+
+   El botón lo inyecta `case-chrome.js` en cada título que tenga notas debajo.
+   Sin JS las notas quedan visibles: el que falla es el plegado, no el texto. */
+.nota[hidden] { display: none; }
+.notabtn {
+  margin-left: 10px; vertical-align: middle;
+  font-family: var(--font-ui); font-size: 11px; font-weight: 500; line-height: 1;
+  letter-spacing: .01em; cursor: pointer;
+  color: var(--muted); background: none;
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 4px 9px 4px 7px; display: inline-flex; align-items: center; gap: 4px;
+}
+.notabtn:hover { color: var(--ink); border-color: var(--ink-2); }
+/* Botón suelto del preámbulo: sin título al cual pegarse, va solo. */
+.notabtn-solo { margin: 4px 0 10px; }
+.notabtn-solo .notabtn { margin-left: 0; }
+.notabtn svg { width: 12px; height: 12px; flex: 0 0 auto; }
+.notabtn[aria-expanded="true"] { color: var(--accent); border-color: var(--accent); }
+.notabtn[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+@media print {
+  /* En papel no hay botón que apretar: las notas van siempre. */
+  .nota[hidden] { display: block !important; }
+  .notabtn { display: none !important; }
+}
+
+/* Píldoras de sección (.secbar): SIEMPRE una sola fila.
+   ─────────────────────────────────────────────────────────────────────────
+   Historia de esta regla, porque tiene dos versiones y la segunda revierte a
+   la primera: al principio se permitió `flex-wrap: wrap` para que con 5+
+   secciones ninguna quedara fuera de vista (el scroller horizontal del shell
+   las esconde sin señal clara). El costo fue peor: la barra se parte en dos
+   filas y ocupa 76px de alto pegada arriba, y se parte según el ANCHO de la
+   ventana — a 1280px entraba, a 1180px no. Un chrome que cambia de alto según
+   el ancho desordena la lectura más de lo que ayuda encontrar una sección.
+
+   La solución es que quepan de verdad, no que envuelvan: los chips se aprietan
+   a medida que la ventana angosta, y el scroller queda solo como último
+   recurso — con un degradado en el borde que avisa que hay más. Los títulos de
+   sección igual se mantienen cortos en el Markdown; esto es la red de abajo. */
+.secbar { flex-wrap: nowrap; overflow-x: auto; position: relative; }
+.secbar::-webkit-scrollbar { height: 0; }
+
+@media (max-width: 1400px) {
+  .secbar { padding-left: 20px; padding-right: 20px; gap: 5px; }
+  .secchip { padding: 3px 9px; }
+  .secchip .n { margin-right: 4px; }
+}
+@media (max-width: 1200px) {
+  .secbar { padding-left: 14px; padding-right: 14px; gap: 3px; }
+  .secchip { padding: 3px 7px; font-size: 12px; }
+  .secchip .n { margin-right: 3px; }
+}
+
+/* Señal de que la barra sigue: degradado en el borde derecho mientras haya
+   scroll pendiente. `case-chrome.js` pone .has-more; sin JS no se ve y la
+   barra funciona igual. */
+.secbar.has-more::after {
+  content: ""; position: sticky; right: 0; flex: 0 0 26px; align-self: stretch;
+  margin-right: -20px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--bar-bg, rgba(246,247,249,.94)));
+}
 
 /* Etiquetas de fuente (.fchip): chips chicos que declaran de dónde sale cada
    dato (Libro de Caja, exporte SNAP, cartola, pantalla, testimonio). Van bajo
@@ -343,6 +463,8 @@
 .fchip[data-f="cartola"]  { --fc: #4a3aa7; }  /* cartola del banco [VERIFICADO] */
 .fchip[data-f="pantalla"] { --fc: #8a94a6; }  /* pantallazo del panel [SCAN] */
 .fchip[data-f="testimonio"]{ --fc: #fab219; } /* dicho por alguien [TESTIMONIO] */
+.fchip[data-f="estatuto"] { --fc: #7a3fa0; }  /* estatuto o reglamento propio [VERIFICADO] */
+.fchip[data-f="ley"]      { --fc: #4a3aa7; }  /* ley o reglamento nacional [VERIFICADO-NORMATIVA] */
 
 /* El sello de regeneración (.stamp) del topbar es metadato de build, no
    contenido: en 375px empuja la barra 26px más allá del viewport y produce
@@ -365,3 +487,35 @@
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* Filtro de perfil en el riel (.perfilbar): con veinte páginas, cada lector
+   tenía que barrer el índice completo para encontrar lo suyo. Va como <select>
+   de una fila y en la tipografía del riel (--font-ui), no la del contenido:
+   es chrome de navegación, no texto del documento. */
+.perfilbar { padding: 10px 10px 11px; border-bottom: 1px solid var(--line);
+  margin-bottom: 4px; }
+.perfillabel { display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-ui); font-size: .62rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .11em;
+  color: var(--sidebar-muted); margin: 0 0 5px 2px; }
+.perfillabel svg { flex: none; opacity: .9; }
+.perfilsel {
+  width: 100%; font-family: var(--font-ui); font-size: .84rem; font-weight: 500;
+  color: var(--sidebar-ink); background: var(--sidebar-2, rgba(255,255,255,.06));
+  border: 1px solid var(--line); border-radius: 8px;
+  padding: 7px 26px 7px 10px; cursor: pointer; line-height: 1.4;
+  -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a94a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 8px center;
+  background-size: 13px;
+}
+.perfilsel:hover { color: #fff; border-color: var(--sidebar-muted); }
+.perfilsel:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.perfilsel option { background: var(--panel); color: var(--ink); }
+/* Un ítem oculto por filtro no debe dejar su hueco ni su grupo vacío detrás. */
+.side .navitem[hidden] { display: none; }
+.side .navgroup[hidden], .side .navlabel[hidden] { display: none; }
+.perfilnota { padding: 0 12px 9px; font-family: var(--font-ui); font-size: .7rem;
+  line-height: 1.45; color: var(--sidebar-muted);
+  border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+.perfilnota b { color: var(--sidebar-ink); font-weight: 600; }
