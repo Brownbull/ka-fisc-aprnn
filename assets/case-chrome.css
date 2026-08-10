@@ -322,6 +322,60 @@
   .score-ring .number { font-size: 1.35rem; }
 }
 
+/* ══ Pares tinta/relleno que el shell no garantiza en oscuro ═══════════════
+   `.case-btn.is-primary` y `.pf-chip` pintan blanco sobre `--accent`. En tema
+   claro ese par da de sobra; en oscuro el acento se aclara y el blanco cae a
+   2.98:1 — bajo el 4.5:1 de AA. Se fija tinta oscura sobre el relleno claro,
+   que es el par que sí funciona ahí. Medido, no supuesto. */
+[data-theme="dark"] .case-btn.is-primary,
+[data-theme="dark"] .case-btn.is-primary:hover { color: #0f141c; }
+[data-theme="dark"] .pf-chip { color: #0f141c; }
+
+/* ══ Paleta semántica por tema ═════════════════════════════════════════════
+   Rojo, ámbar, verde y compañía se usan como TINTA en tablas, píldoras y
+   marcas. Un mismo hex no sirve para los dos temas: el tono que cruza AA sobre
+   el fondo claro (#f6f7f9) queda casi negro sobre el oscuro (#1b2433), y al
+   revés. Estaban escritos literales en el Markdown de siete páginas, así que
+   al oscurecerlos para el tema claro se rompió el oscuro sin que nadie lo
+   viera — la pasada «oscura» del audit ni siquiera cambiaba de tema.
+
+   Ahora son tokens con valor por tema. Todos medidos ≥4.5:1 contra el fondo
+   más exigente de su tema. Si se agrega un color nuevo, va acá, no inline. */
+:root {
+  --sev-ambar: #8a5b00;
+  --sev-azul: #2569b8;
+  --sev-gris: #6e7685;
+  --sev-lila: #443dc4;
+  --sev-lima: #607a18;
+  --sev-naranja: #b84e22;
+  --sev-rojo: #c33636;
+  --sev-verde: #0a7d0a;
+}
+[data-theme="dark"] {
+  --sev-ambar: #d99000;
+  --sev-azul: #4f9bff;
+  --sev-gris: #98a4b8;
+  --sev-lila: #9b8dff;
+  --sev-lima: #9fc22f;
+  --sev-naranja: #f07f4a;
+  --sev-rojo: #ff5a5a;
+  --sev-verde: #28b828;
+}
+
+/* ══ Piso de contraste del texto atenuado ═════════════════════════════════
+   `a3.css` fija `--muted:#7a8595`, que sobre el fondo de página (#f6f7f9) da
+   **3.49:1** — bajo el 4.5:1 que WCAG AA pide para texto normal. No es un
+   detalle de purista: ese token pinta las etiquetas de fuente, los encabezados
+   de tabla y las notas al pie, y la audiencia de estos sitios son vecinos de un
+   APR, buena parte de ellos con presbicia.
+
+   Se oscurece solo en tema claro; el oscuro ya cumple (4.87–5.77:1) y aclararlo
+   ahí lo empeoraría. Medido, no estimado: #636c7a da 4.95:1 sobre la página y
+   5.17:1 sobre los paneles — el margen extra hace falta porque .pf-sub se lee
+   sobre las cajas teñidas de los prisms, que suben el fondo, y sigue distinguiéndose de --ink-2 (#3d4756). */
+:root:not([data-theme="dark"]) { --muted: #636c7a; }
+[data-theme="dark"] { --muted: #94a1b5; }
+
 /* ══ Marcas de estado (.marca) ═════════════════════════════════════════════
    Etiqueta de un resultado en cuatro niveles, para que el lector sepa cómo le
    fue ANTES de leer el párrafo. Cuatro y no tres: entre «bien» y «alerta» hay
@@ -339,18 +393,18 @@
 .marca {
   display: inline-flex; align-items: center; gap: 5px; vertical-align: middle;
   margin-left: 10px; padding: 2px 9px 2px 7px;
-  font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+  font-family: var(--font-ui); font-size: max(12px, .75rem); font-weight: 600;
   letter-spacing: .04em; text-transform: uppercase; white-space: nowrap;
   border: 1px solid currentColor; border-radius: 999px;
 }
 .marca::before { font-size: 9px; line-height: 1; }
-.marca[data-m="bien"]   { color: #1f8a4c; }
+.marca[data-m="bien"]   { color: #1d8247; }
 .marca[data-m="bien"]::before   { content: "●"; }
-.marca[data-m="fragil"] { color: #7a9a1e; }
+.marca[data-m="fragil"] { color: #607a18; }
 .marca[data-m="fragil"]::before { content: "◐"; }
-.marca[data-m="alerta"] { color: #c07f00; }
+.marca[data-m="alerta"] { color: #9a6600; }
 .marca[data-m="alerta"]::before { content: "▲"; }
-.marca[data-m="falla"]  { color: #d03b3b; }
+.marca[data-m="falla"]  { color: #c33636; }
 .marca[data-m="falla"]::before  { content: "■"; }
 
 /* En tema oscuro los mismos tonos se apagan contra el fondo. */
@@ -387,7 +441,7 @@
 .nota[hidden] { display: none; }
 .notabtn {
   margin-left: 10px; vertical-align: middle;
-  font-family: var(--font-ui); font-size: 11px; font-weight: 500; line-height: 1;
+  font-family: var(--font-ui); font-size: max(12px, .75rem); font-weight: 500; line-height: 1;
   letter-spacing: .01em; cursor: pointer;
   color: var(--muted); background: none;
   border: 1px solid var(--line); border-radius: 999px;
