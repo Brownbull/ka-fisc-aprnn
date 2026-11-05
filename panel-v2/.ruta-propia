@@ -1,0 +1,4 @@
+Ruta propia del sitio: el panel nuevo de la Comisión Revisora (B-023 de El Fiscalizador, 2026-11-05).
+Lo escribe build.py --public de tools/fiscalizador-dash, no el build del sitio; tools/deploy-gh-pages.sh
+conserva toda carpeta que tenga este archivo. Mientras sea una prueba al lado del sitio antiguo lleva noindex
+y no entra al sitemap.xml.
